@@ -1,6 +1,6 @@
 name: testforS4
 description: 'testing for Upgrade '
-version: 0.0.1
+version: '1.1'
 author: senthilmalli.parameswaran@mnscorp.net
 language: python
 buildSystem: ''
@@ -24,7 +24,48 @@ pipelines:
       outputs: []
     subgraphs: []
     dependencies: {}
-datasets: {}
+  pipelines/pl_test_observability:
+    name: pl_test_observability
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-07-30 08:23:13'
+    datasets:
+      inputs:
+      - datasets/src_table
+      outputs:
+      - datasets/tgt_table
+    subgraphs: []
+    dependencies: {}
+datasets:
+  datasets/src_table:
+    name: src_table
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-07-30 08:24:09'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-07-30 08:24:09'
+  datasets/tgt_table:
+    name: tgt_table
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-07-30 08:25:02'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-07-30 08:25:02'
 templates: {}
 jobs: {}
 gemContainer:
@@ -50,18 +91,18 @@ sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
-- modifiedAt: '2024-07-29T08:18:16.343708Z'
+- type: plibMaven
+  modifiedAt: '2024-07-30T09:55:50.485326Z'
   name: plibMaven
   version: 8.0.29
-  id: '263241866'
-  createdAt: '2024-07-29T08:18:16.343708Z'
-  type: plibMaven
-- modifiedAt: '2024-07-29T08:18:16.343708Z'
+  id: '844461120'
+  createdAt: '2024-07-30T09:55:50.485193Z'
+- type: plibPypi
+  modifiedAt: '2024-07-30T09:55:50.485364Z'
   name: plibPypi
   version: 1.9.9
-  id: '53181014'
-  createdAt: '2024-07-29T08:18:16.343708Z'
-  type: plibPypi
+  id: '190266249'
+  createdAt: '2024-07-30T09:55:50.485357Z'
 projectDependencies:
   '52':
     projectUID: 52
@@ -70,7 +111,7 @@ projectDependencies:
     version: 0.0.8
     isDefault: true
     author: null
-    createdAt: '2024-07-29 08:17:54'
+    createdAt: '2024-07-29 14:36:18'
   '51':
     projectUID: 51
     projectName: ProphecySparkBasicsPython
@@ -78,7 +119,7 @@ projectDependencies:
     version: 0.2.25
     isDefault: true
     author: null
-    createdAt: '2024-07-29 08:17:54'
+    createdAt: '2024-07-29 14:36:18'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}
