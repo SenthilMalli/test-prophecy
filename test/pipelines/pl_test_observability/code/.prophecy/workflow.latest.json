@@ -1,0 +1,424 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.29",
+        "pyPiVersion" : "1.9.9"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/pl_test_observability",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pl_test_observability",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "3",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "senthilmalliparameswaranmnscorpnetteam.testfors4.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.warehouse.functions", "prophecy.spark_basic.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "52",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "51",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pl_test_observability",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "MtJMSg7psPN-TdtPy3DVc",
+    "source" : "ep596CjQTUhERwyYHmCsE$$FTijs9efr3SwPNC4KDSi1",
+    "sourcePort" : "eC_7pufXb8hDvSgw1BJ_P$$eTSjRNvDM1kQ86uK8ZnnJ",
+    "target" : "ZrzPlQX07NNhAMPDvyffz$$CLIVAhWdJAebUYOkrDdYs",
+    "targetPort" : "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA"
+  }, {
+    "id" : "dkBW0W7HOqNCHkXecI9PR$$ShKEY6pJMNwr7j9Wo0XSb",
+    "source" : "ZrzPlQX07NNhAMPDvyffz$$CLIVAhWdJAebUYOkrDdYs",
+    "sourcePort" : "PjMftZdlLMzLALF73tu2t$$qQhIM17E0bgOhbMzlZk3k",
+    "target" : "awQHg2FQBBzU42nhgJDuj$$oq8_z5VvBTQh6nStuSVF4",
+    "targetPort" : "IQGyXEfA7Soj_ETNoVDaG$$JBjsqjgrqJYCd5DgD4-qI"
+  } ],
+  "processes" : {
+    "ep596CjQTUhERwyYHmCsE$$FTijs9efr3SwPNC4KDSi1" : {
+      "id" : "ep596CjQTUhERwyYHmCsE$$FTijs9efr3SwPNC4KDSi1",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_table",
+        "slug" : "src_table",
+        "x" : -520,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "eC_7pufXb8hDvSgw1BJ_P$$eTSjRNvDM1kQ86uK8ZnnJ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_table"
+      }
+    },
+    "awQHg2FQBBzU42nhgJDuj$$oq8_z5VvBTQh6nStuSVF4" : {
+      "id" : "awQHg2FQBBzU42nhgJDuj$$oq8_z5VvBTQh6nStuSVF4",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "tgt_table",
+        "slug" : "tgt_table",
+        "x" : -140,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "IQGyXEfA7Soj_ETNoVDaG$$JBjsqjgrqJYCd5DgD4-qI",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "submitted_at",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "date_range",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "no_of_collegues",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "response",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "label",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "store",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "file_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/tgt_table"
+      }
+    },
+    "ZrzPlQX07NNhAMPDvyffz$$CLIVAhWdJAebUYOkrDdYs" : {
+      "id" : "ZrzPlQX07NNhAMPDvyffz$$CLIVAhWdJAebUYOkrDdYs",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -300,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "submitted_at",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "date_range",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "no_of_collegues",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "response",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "label",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "store",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "file_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_datetime",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "PjMftZdlLMzLALF73tu2t$$qQhIM17E0bgOhbMzlZk3k",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "submitted_at",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "submitted_at"
+          },
+          "description" : ""
+        }, {
+          "target" : "date_range",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "date_range"
+          },
+          "description" : ""
+        }, {
+          "target" : "region",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "region"
+          },
+          "description" : ""
+        }, {
+          "target" : "no_of_collegues",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "no_of_collegues"
+          },
+          "description" : ""
+        }, {
+          "target" : "response",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "response"
+          },
+          "description" : ""
+        }, {
+          "target" : "label",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "label"
+          },
+          "description" : ""
+        }, {
+          "target" : "store",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "store"
+          },
+          "description" : ""
+        }, {
+          "target" : "file_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "file_name"
+          },
+          "description" : ""
+        }, {
+          "target" : "load_datetime",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "load_datetime"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##label", "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##store", "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##response", "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##date_range", "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##no_of_collegues", "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##region", "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##file_name", "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##submitted_at", "u3anDfy4-Py-MsW0zyA79$$0r1v4b3-RO2ioL0LIRhoA##load_datetime" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
