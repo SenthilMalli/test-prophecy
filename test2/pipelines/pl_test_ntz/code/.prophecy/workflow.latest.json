@@ -1,0 +1,349 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.29",
+        "pyPiVersion" : "1.9.9"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/pl_test_ntz",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pl_test_ntz",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "3",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "testsst.projtestmetrics.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.warehouse.functions", "prophecy.spark_basic.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "52",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "51",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pl_test_ntz",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "4YLw8m-QRes0yZWOaW2QK$$VIMlUs5Fp_xEYMStGX8eS",
+    "source" : "IUnCenGVyyNAqCOn-cy84$$W6uR__LdibmsObeHEAeXp",
+    "sourcePort" : "jiScrGbyY9Ml932lOevRT$$31ULcHaFGRAnmlM3njAQG",
+    "target" : "4kpYB6VOgqqHhpL4ExcEi$$KA2f8f7Q4vp7H192BD_SB",
+    "targetPort" : "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6"
+  }, {
+    "id" : "Ku-y1dwTGsezUVDaleKbc$$kXdJGaN2MPQJR1ZLS5xoJ",
+    "source" : "4kpYB6VOgqqHhpL4ExcEi$$KA2f8f7Q4vp7H192BD_SB",
+    "sourcePort" : "hqLQqQHYt2XIcQJ8kOkSe$$ZUdV5mvAsiWQc99dpwxCC",
+    "target" : "EFSKmMNxo8YRmetdDa5gm$$LcjuZWgLL8SG0xkSetVhO",
+    "targetPort" : "5iqqITob0VU3Bn9tZzAbP$$n4oq4sQ2OQZtZVCgqCn_T"
+  } ],
+  "processes" : {
+    "IUnCenGVyyNAqCOn-cy84$$W6uR__LdibmsObeHEAeXp" : {
+      "id" : "IUnCenGVyyNAqCOn-cy84$$W6uR__LdibmsObeHEAeXp",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_ds",
+        "slug" : "src_ds",
+        "x" : -1220,
+        "y" : -240,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "jiScrGbyY9Ml932lOevRT$$31ULcHaFGRAnmlM3njAQG",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_ds"
+      }
+    },
+    "4kpYB6VOgqqHhpL4ExcEi$$KA2f8f7Q4vp7H192BD_SB" : {
+      "id" : "4kpYB6VOgqqHhpL4ExcEi$$KA2f8f7Q4vp7H192BD_SB",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : -1080,
+        "y" : -240,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "referencelevel1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "referencelevel2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "createdtimestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "modifiedtimestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "hqLQqQHYt2XIcQJ8kOkSe$$ZUdV5mvAsiWQc99dpwxCC",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "referencelevel1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "referencelevel1"
+          },
+          "description" : ""
+        }, {
+          "target" : "referencelevel2",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "referencelevel2"
+          },
+          "description" : ""
+        }, {
+          "target" : "key",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "key"
+          },
+          "description" : ""
+        }, {
+          "target" : "value",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "value"
+          },
+          "description" : ""
+        }, {
+          "target" : "createdtimestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "createdtimestamp"
+          },
+          "description" : ""
+        }, {
+          "target" : "modifiedtimestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "modifiedtimestamp"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##value", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##referencelevel2", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##modifiedtimestamp", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##referencelevel1", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##key", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##createdtimestamp" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "EFSKmMNxo8YRmetdDa5gm$$LcjuZWgLL8SG0xkSetVhO" : {
+      "id" : "EFSKmMNxo8YRmetdDa5gm$$LcjuZWgLL8SG0xkSetVhO",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "tgt_ds",
+        "slug" : "tgt_ds",
+        "x" : -920,
+        "y" : -240,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5iqqITob0VU3Bn9tZzAbP$$n4oq4sQ2OQZtZVCgqCn_T",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "referencelevel1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "referencelevel2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "createdtimestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "modifiedtimestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/tgt_ds"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
