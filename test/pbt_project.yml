@@ -92,17 +92,17 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-07-30T08:23:14.935487Z'
+  modifiedAt: '2024-07-30T09:55:50.485326Z'
   name: plibMaven
   version: 8.0.29
-  id: '1754530057'
-  createdAt: '2024-07-30T08:23:14.93527Z'
+  id: '844461120'
+  createdAt: '2024-07-30T09:55:50.485193Z'
 - type: plibPypi
-  modifiedAt: '2024-07-30T08:23:14.936249Z'
+  modifiedAt: '2024-07-30T09:55:50.485364Z'
   name: plibPypi
   version: 1.9.9
-  id: '1476341186'
-  createdAt: '2024-07-30T08:23:14.936182Z'
+  id: '190266249'
+  createdAt: '2024-07-30T09:55:50.485357Z'
 projectDependencies:
   '52':
     projectUID: 52
