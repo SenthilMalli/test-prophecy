@@ -1,6 +1,6 @@
 name: proj_test_metrics
-description: 'Observability test '
-version: 0.0.1
+description: ''
+version: '2.1'
 author: senthilmalli.parameswaran@mnscorp.net
 language: python
 buildSystem: ''
@@ -91,18 +91,18 @@ sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
-- type: plibMaven
-  modifiedAt: '2024-08-05T11:53:59.932645Z'
+- modifiedAt: '2024-07-29T13:51:57.292227Z'
   name: plibMaven
   version: 8.0.29
-  id: '1541689161'
-  createdAt: '2024-08-05T11:53:59.932615Z'
-- type: plibPypi
-  modifiedAt: '2024-08-05T11:53:59.932673Z'
+  id: '2040829212'
+  createdAt: '2024-07-29T13:51:57.292227Z'
+  type: plibMaven
+- modifiedAt: '2024-07-29T13:51:57.292227Z'
   name: plibPypi
   version: 1.9.9
-  id: '1377200158'
-  createdAt: '2024-08-05T11:53:59.932666Z'
+  id: '1903410798'
+  createdAt: '2024-07-29T13:51:57.292227Z'
+  type: plibPypi
 projectDependencies:
   '52':
     projectUID: 52
