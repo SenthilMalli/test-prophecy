@@ -35,8 +35,10 @@ pipelines:
     language: python
     createdAt: '2024-08-05 11:53:57'
     datasets:
-      inputs: []
-      outputs: []
+      inputs:
+      - datasets/src_ds
+      outputs:
+      - datasets/tgt_ds
     subgraphs: []
     dependencies: {}
 datasets:

@@ -7,7 +7,9 @@ from prophecy.utils import *
 from pl_test_observability.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_identity_transformation = identity_transformation(spark)
+    df_src_ds = src_ds(spark)
+    df_add_created_timestamp = add_created_timestamp(spark, df_src_ds)
+    tgt_ds(spark, df_add_created_timestamp)
 
 def main():
     spark = SparkSession.builder\

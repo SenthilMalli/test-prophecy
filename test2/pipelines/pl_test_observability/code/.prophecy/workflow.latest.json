@@ -73,27 +73,27 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "6PgUxR27ekSkJu7a19858$$3IS7ODxYfv_bX70aKV6_3",
-    "source" : "aIYgEtZESxc61P7BRsPwp$$ze60eH1yBEH3kTiQjQ9-b",
-    "sourcePort" : "mFQf2lKrFMjw_DNNrgvrz$$qhBw_q_8BpfSgDLAvxb-n",
-    "target" : "F1z6FAjKL-Jhi5bctd7VX$$AUimXJuIr03iypRj63_j9",
-    "targetPort" : "O_0mbHyY2NqzGkaIRBqq7$$6p5kyyvQ-RH335rFBUqD5"
+    "id" : "Yp88UrTzJW0VxMGYnsUn0",
+    "source" : "q9wWy3qWhN7vA3MaUPjxz$$JWHoJfhoCPtoSPHps5Srw",
+    "sourcePort" : "Bw9PbkgUtV97-4P6UBi6u$$fB_90fnVFB60CcTBXEQBx",
+    "target" : "MbhYgXsvxWX1rA0YeDjYg$$XodXDMjGRdw9yMb4XeEnm",
+    "targetPort" : "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH"
   }, {
-    "id" : "bSM6HfyHnRsj4bOgV4rbE$$Hs9IsG2VMEH3Tmzj79dQy",
-    "source" : "F1z6FAjKL-Jhi5bctd7VX$$AUimXJuIr03iypRj63_j9",
-    "sourcePort" : "KKXbnN-0sVcvLdmLP-mrv$$sQAWVDRM7Wl5Uas45EIhl",
-    "target" : "z_6kpnf3k0VDUUs41yM2s$$IWqlhOcnBZM9TkO10KoRC",
-    "targetPort" : "3mQvROLotSgH3jmiplYsJ$$YLqMDhyosVppw3Allqh-0"
+    "id" : "qZMjDJDazpnOu-b-k-h-2",
+    "source" : "MbhYgXsvxWX1rA0YeDjYg$$XodXDMjGRdw9yMb4XeEnm",
+    "sourcePort" : "_-2y4z9urpuvVTT5wYrBk$$_jGTtusxYSohFs81Y1dLP",
+    "target" : "xFKcW14TBiC7frwMCRcfE$$LHuVLnPIHnk0eN5RtahmF",
+    "targetPort" : "7CLm-RIGeZXPvb8WIw81m$$_c-oCyD4s2PAu0kW2eN9m"
   } ],
   "processes" : {
-    "aIYgEtZESxc61P7BRsPwp$$ze60eH1yBEH3kTiQjQ9-b" : {
-      "id" : "aIYgEtZESxc61P7BRsPwp$$ze60eH1yBEH3kTiQjQ9-b",
+    "q9wWy3qWhN7vA3MaUPjxz$$JWHoJfhoCPtoSPHps5Srw" : {
+      "id" : "q9wWy3qWhN7vA3MaUPjxz$$JWHoJfhoCPtoSPHps5Srw",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_0",
-        "slug" : "Source_0",
-        "x" : -420,
-        "y" : -60,
+        "label" : "src_ds",
+        "slug" : "src_ds",
+        "x" : -120,
+        "y" : -260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -102,35 +102,98 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "mFQf2lKrFMjw_DNNrgvrz$$qhBw_q_8BpfSgDLAvxb-n",
+          "id" : "Bw9PbkgUtV97-4P6UBi6u$$fB_90fnVFB60CcTBXEQBx",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       },
-      "properties" : { }
+      "properties" : {
+        "datasetId" : "datasets/src_ds"
+      }
     },
-    "F1z6FAjKL-Jhi5bctd7VX$$AUimXJuIr03iypRj63_j9" : {
-      "id" : "F1z6FAjKL-Jhi5bctd7VX$$AUimXJuIr03iypRj63_j9",
+    "MbhYgXsvxWX1rA0YeDjYg$$XodXDMjGRdw9yMb4XeEnm" : {
+      "id" : "MbhYgXsvxWX1rA0YeDjYg$$XodXDMjGRdw9yMb4XeEnm",
       "component" : "Reformat",
       "metadata" : {
-        "label" : "identity_transformation",
-        "slug" : "identity_transformation",
-        "x" : -300,
-        "y" : -60,
+        "label" : "add_created_timestamp",
+        "slug" : "add_created_timestamp",
+        "x" : 20,
+        "y" : -260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Adds a timestamp indicating when the data was processed.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "O_0mbHyY2NqzGkaIRBqq7$$6p5kyyvQ-RH335rFBUqD5",
-          "slug" : "in0"
+          "id" : "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "referencelevel1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "referencelevel2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "createdtimestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "modifiedtimestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "KKXbnN-0sVcvLdmLP-mrv$$sQAWVDRM7Wl5Uas45EIhl",
+          "id" : "_-2y4z9urpuvVTT5wYrBk$$_jGTtusxYSohFs81Y1dLP",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -139,24 +202,66 @@
       },
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
-        "expressions" : [ ],
+        "expressions" : [ {
+          "target" : "referencelevel1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "referencelevel1"
+          },
+          "description" : ""
+        }, {
+          "target" : "referencelevel2",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "referencelevel2"
+          },
+          "description" : ""
+        }, {
+          "target" : "key",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "key"
+          },
+          "description" : ""
+        }, {
+          "target" : "value",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "value"
+          },
+          "description" : ""
+        }, {
+          "target" : "createdtimestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "current_timestamp()"
+          },
+          "description" : ""
+        }, {
+          "target" : "modifiedtimestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "modifiedtimestamp"
+          },
+          "description" : ""
+        } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ ]
+        "columnsSelector" : [ "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##key", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##modifiedtimestamp", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##referencelevel2", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##referencelevel1", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##value" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
-    "z_6kpnf3k0VDUUs41yM2s$$IWqlhOcnBZM9TkO10KoRC" : {
-      "id" : "z_6kpnf3k0VDUUs41yM2s$$IWqlhOcnBZM9TkO10KoRC",
+    "xFKcW14TBiC7frwMCRcfE$$LHuVLnPIHnk0eN5RtahmF" : {
+      "id" : "xFKcW14TBiC7frwMCRcfE$$LHuVLnPIHnk0eN5RtahmF",
       "component" : "Target",
       "metadata" : {
-        "label" : "Target_1",
-        "slug" : "Target_1",
-        "x" : -180,
-        "y" : -60,
+        "label" : "tgt_ds",
+        "slug" : "tgt_ds",
+        "x" : 180,
+        "y" : -260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -164,15 +269,76 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "3mQvROLotSgH3jmiplYsJ$$YLqMDhyosVppw3Allqh-0",
-          "slug" : "in0"
+          "id" : "7CLm-RIGeZXPvb8WIw81m$$_c-oCyD4s2PAu0kW2eN9m",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "referencelevel1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "referencelevel2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "createdtimestamp",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "modifiedtimestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       },
-      "properties" : { }
+      "properties" : {
+        "datasetId" : "datasets/tgt_ds"
+      }
     }
   },
   "ports" : {
@@ -181,70 +347,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.aIYgEtZESxc61P7BRsPwp$$ze60eH1yBEH3kTiQjQ9-b.properties.datasetId",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "dataset id missing",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.F1z6FAjKL-Jhi5bctd7VX$$AUimXJuIr03iypRj63_j9",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.z_6kpnf3k0VDUUs41yM2s$$IWqlhOcnBZM9TkO10KoRC",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.z_6kpnf3k0VDUUs41yM2s$$IWqlhOcnBZM9TkO10KoRC.properties.datasetId",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "dataset id missing",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

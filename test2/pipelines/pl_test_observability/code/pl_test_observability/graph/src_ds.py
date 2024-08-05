@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from pl_test_observability.config.ConfigStore import *
 from pl_test_observability.functions import *
 
-def identity_transformation(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    return in0
+def src_ds(spark: SparkSession) -> DataFrame:
+    return spark.read.table("`cultureamp_ingest_ndev`.`surveylookup_s_tbl`")
