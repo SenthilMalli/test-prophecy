@@ -2,45 +2,66 @@ version: 1
 schema:
   type: struct
   fields:
-  - name: referencelevel1
+  - name: col1
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: First column of data from the source dataset
       mappings: []
       tags: []
-  - name: referencelevel2
+  - name: col2
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Second column of data from the source dataset
       mappings: []
       tags: []
-  - name: key
+  - name: file_name
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Name of the file being processed
       mappings: []
       tags: []
-  - name: value
-    type: string
+  - name: file_id
+    type: integer
     nullable: true
     metadata:
-      description: ''
+      description: Unique identifier for the file
       mappings: []
       tags: []
-  - name: createdtimestamp
+  - name: load_timestamp
     type: timestamp
     nullable: true
     metadata:
-      description: ''
+      description: The date and time when the data was loaded
       mappings: []
       tags: []
-  - name: modifiedtimestamp
-    type: timestamp
+  - name: pipeline_id
+    type: string
     nullable: true
     metadata:
-      description: ''
+      description: Identifier for the data processing pipeline
+      mappings: []
+      tags: []
+  - name: year
+    type: integer
+    nullable: true
+    metadata:
+      description: Year when the data was loaded
+      mappings: []
+      tags: []
+  - name: month
+    type: integer
+    nullable: true
+    metadata:
+      description: Month when the data was loaded
+      mappings: []
+      tags: []
+  - name: day
+    type: integer
+    nullable: true
+    metadata:
+      description: Day of the month when the data was loaded
       mappings: []
       tags: []

@@ -2,44 +2,23 @@ version: 1
 schema:
   type: struct
   fields:
-  - name: referencelevel1
+  - name: col1
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: First column of data from the source dataset
       mappings: []
       tags: []
-  - name: referencelevel2
+  - name: col2
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Second column of data from the source dataset
       mappings: []
       tags: []
-  - name: key
-    type: string
-    nullable: true
-    metadata:
-      description: ''
-      mappings: []
-      tags: []
-  - name: value
-    type: string
-    nullable: true
-    metadata:
-      description: ''
-      mappings: []
-      tags: []
-  - name: createdtimestamp
+  - name: load_timestamp
     type: timestamp
     nullable: false
-    metadata:
-      description: ''
-      mappings: []
-      tags: []
-  - name: modifiedtimestamp
-    type: timestamp
-    nullable: true
     metadata:
       description: ''
       mappings: []

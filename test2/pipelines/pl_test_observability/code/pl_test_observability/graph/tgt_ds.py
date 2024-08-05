@@ -7,4 +7,4 @@ from pl_test_observability.config.ConfigStore import *
 from pl_test_observability.functions import *
 
 def tgt_ds(spark: SparkSession, in0: DataFrame):
-    in0.write.format("delta").mode("overwrite").saveAsTable("`sst_ingest_ndev`.`observabilitytest2_ns_tbl`")
+    in0.write.format("delta").mode("overwrite").saveAsTable("`sst_ingest_ndev`.`observability_test`")

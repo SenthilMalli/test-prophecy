@@ -97,7 +97,9 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Retrieves operational data from a specified table for analysis.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ ],
@@ -135,56 +137,83 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "referencelevel1",
+              "name" : "col1",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "First column of data from the source dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "referencelevel2",
+              "name" : "col2",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Second column of data from the source dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "key",
+              "name" : "file_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Name of the file being processed",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "value",
-              "type" : "string",
+              "name" : "file_id",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Unique identifier for the file",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "createdtimestamp",
+              "name" : "load_timestamp",
               "type" : "timestamp",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "The date and time when the data was loaded",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "modifiedtimestamp",
-              "type" : "timestamp",
+              "name" : "pipeline_id",
+              "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Identifier for the data processing pipeline",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Year when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "month",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Month when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "day",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Day of the month when the data was loaded",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -203,51 +232,30 @@
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
         "expressions" : [ {
-          "target" : "referencelevel1",
+          "target" : "col1",
           "expression" : {
             "format" : "sql",
-            "expression" : "referencelevel1"
+            "expression" : "col1"
           },
           "description" : ""
         }, {
-          "target" : "referencelevel2",
+          "target" : "col2",
           "expression" : {
             "format" : "sql",
-            "expression" : "referencelevel2"
+            "expression" : "col2"
           },
           "description" : ""
         }, {
-          "target" : "key",
+          "target" : "load_timestamp",
           "expression" : {
             "format" : "sql",
-            "expression" : "key"
-          },
-          "description" : ""
-        }, {
-          "target" : "value",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "value"
-          },
-          "description" : ""
-        }, {
-          "target" : "createdtimestamp",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "current_timestamp()"
-          },
-          "description" : ""
-        }, {
-          "target" : "modifiedtimestamp",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "modifiedtimestamp"
+            "expression" : "from_utc_timestamp(current_timestamp(), 'Europe/London')"
           },
           "description" : ""
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##key", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##modifiedtimestamp", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##referencelevel2", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##referencelevel1", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##value" ]
+        "columnsSelector" : [ "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col1", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col2" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
@@ -265,7 +273,9 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Stores data into a table for monitoring and analysis.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {
@@ -274,54 +284,27 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "referencelevel1",
+              "name" : "col1",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "First column of data from the source dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "referencelevel2",
+              "name" : "col2",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Second column of data from the source dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "key",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "value",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "createdtimestamp",
+              "name" : "load_timestamp",
               "type" : "timestamp",
               "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "modifiedtimestamp",
-              "type" : "timestamp",
-              "nullable" : true,
               "metadata" : {
                 "description" : "",
                 "mappings" : [ ],
