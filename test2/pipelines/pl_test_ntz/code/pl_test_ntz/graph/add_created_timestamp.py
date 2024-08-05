@@ -6,12 +6,12 @@ from prophecy.libs import typed_lit
 from pl_test_ntz.config.ConfigStore import *
 from pl_test_ntz.functions import *
 
-def Reformat_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def add_created_timestamp(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         col("referencelevel1"), 
         col("referencelevel2"), 
         col("key"), 
         col("value"), 
-        col("createdtimestamp"), 
+        current_timestamp().alias("createdtimestamp"), 
         col("modifiedtimestamp")
     )

@@ -117,14 +117,16 @@
       "id" : "4kpYB6VOgqqHhpL4ExcEi$$KA2f8f7Q4vp7H192BD_SB",
       "component" : "Reformat",
       "metadata" : {
-        "label" : "Reformat_1",
-        "slug" : "Reformat_1",
+        "label" : "add_created_timestamp",
+        "slug" : "add_created_timestamp",
         "x" : -1080,
         "y" : -240,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Adds a timestamp indicating when the data was processed.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {
@@ -232,7 +234,7 @@
           "target" : "createdtimestamp",
           "expression" : {
             "format" : "sql",
-            "expression" : "createdtimestamp"
+            "expression" : "current_timestamp()"
           },
           "description" : ""
         }, {
@@ -245,7 +247,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##value", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##referencelevel2", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##modifiedtimestamp", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##referencelevel1", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##key", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##createdtimestamp" ]
+        "columnsSelector" : [ "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##key", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##modifiedtimestamp", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##referencelevel2", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##referencelevel1", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##value" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
@@ -310,7 +312,7 @@
             }, {
               "name" : "createdtimestamp",
               "type" : "timestamp",
-              "nullable" : true,
+              "nullable" : false,
               "metadata" : {
                 "description" : "",
                 "mappings" : [ ],

@@ -1,5 +1,5 @@
 name: proj_test_metrics
-description: ''
+description: 'Observability test '
 version: 0.0.1
 author: senthilmalli.parameswaran@mnscorp.net
 language: python
@@ -24,6 +24,19 @@ pipelines:
       - datasets/src_ds
       outputs:
       - datasets/tgt_ds
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_test_observability:
+    name: pl_test_observability
+    description: testing for observability
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-08-05 11:53:57'
+    datasets:
+      inputs: []
+      outputs: []
     subgraphs: []
     dependencies: {}
 datasets:
@@ -78,18 +91,18 @@ sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
-- modifiedAt: '2024-07-29T13:51:57.292227Z'
+- type: plibMaven
+  modifiedAt: '2024-08-05T11:53:59.932645Z'
   name: plibMaven
   version: 8.0.29
-  id: '2040829212'
-  createdAt: '2024-07-29T13:51:57.292227Z'
-  type: plibMaven
-- modifiedAt: '2024-07-29T13:51:57.292227Z'
+  id: '1541689161'
+  createdAt: '2024-08-05T11:53:59.932615Z'
+- type: plibPypi
+  modifiedAt: '2024-08-05T11:53:59.932673Z'
   name: plibPypi
   version: 1.9.9
-  id: '1903410798'
-  createdAt: '2024-07-29T13:51:57.292227Z'
-  type: plibPypi
+  id: '1377200158'
+  createdAt: '2024-08-05T11:53:59.932666Z'
 projectDependencies:
   '52':
     projectUID: 52

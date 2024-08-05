@@ -32,7 +32,7 @@ schema:
       tags: []
   - name: createdtimestamp
     type: timestamp
-    nullable: true
+    nullable: false
     metadata:
       description: ''
       mappings: []
