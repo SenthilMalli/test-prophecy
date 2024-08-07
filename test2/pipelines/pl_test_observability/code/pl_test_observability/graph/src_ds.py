@@ -6,5 +6,6 @@ from prophecy.libs import typed_lit
 from pl_test_observability.config.ConfigStore import *
 from pl_test_observability.functions import *
 
+@instrument
 def src_ds(spark: SparkSession) -> DataFrame:
     return spark.read.table("`sst_ingest_ndev`.`opsdeadlock1_ns_tbl`")
