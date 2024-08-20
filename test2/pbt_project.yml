@@ -41,6 +41,21 @@ pipelines:
       - datasets/tgt_ds
     subgraphs: []
     dependencies: {}
+  pipelines/pl_observability_test_v1:
+    name: pl_observability_test_v1
+    description: Testing observability feature
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-08-20 11:50:14'
+    datasets:
+      inputs:
+      - datasets/src_ds_test
+      outputs:
+      - datasets/tgt_ds_test
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -68,6 +83,32 @@ datasets:
         description: ''
         author: senthilmalli.parameswaran@mnscorp.net
         createdAt: '2024-07-30 11:43:07'
+  datasets/src_ds_test:
+    name: src_ds_test
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-08-20 11:51:33'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-08-20 11:51:33'
+  datasets/tgt_ds_test:
+    name: tgt_ds_test
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-08-20 11:55:06'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-08-20 11:55:06'
 templates: {}
 jobs:
   jobs/Job_test_observability:
@@ -117,18 +158,18 @@ sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
-- modifiedAt: '2024-07-29T13:51:57.292227Z'
+- type: plibMaven
+  modifiedAt: '2024-08-20T11:50:16.056615Z'
   name: plibMaven
   version: 8.0.29
-  id: '2040829212'
-  createdAt: '2024-07-29T13:51:57.292227Z'
-  type: plibMaven
-- modifiedAt: '2024-07-29T13:51:57.292227Z'
+  id: '581816326'
+  createdAt: '2024-08-20T11:50:16.05636Z'
+- type: plibPypi
+  modifiedAt: '2024-08-20T11:50:16.057372Z'
   name: plibPypi
   version: 1.9.9
-  id: '1903410798'
-  createdAt: '2024-07-29T13:51:57.292227Z'
-  type: plibPypi
+  id: '940729912'
+  createdAt: '2024-08-20T11:50:16.057313Z'
 projectDependencies:
   '52':
     projectUID: 52
@@ -137,7 +178,7 @@ projectDependencies:
     version: 0.0.8
     isDefault: true
     author: null
-    createdAt: '2024-07-29 14:36:18'
+    createdAt: '2024-08-19 15:05:11'
   '51':
     projectUID: 51
     projectName: ProphecySparkBasicsPython
@@ -145,7 +186,7 @@ projectDependencies:
     version: 0.2.25
     isDefault: true
     author: null
-    createdAt: '2024-07-29 14:36:18'
+    createdAt: '2024-08-19 15:05:11'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

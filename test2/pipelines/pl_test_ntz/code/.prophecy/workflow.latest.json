@@ -125,7 +125,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Adds a timestamp indicating when the data was processed.",
+        "comment" : "Selects and organizes key columns from the data, including file and timestamp details.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -135,56 +135,83 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "referencelevel1",
+              "name" : "col1",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "First column of data from the source dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "referencelevel2",
+              "name" : "col2",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Second column of data from the source dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "key",
+              "name" : "file_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Name of the file being processed",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "value",
-              "type" : "string",
+              "name" : "file_id",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Unique identifier for the file",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "createdtimestamp",
+              "name" : "load_timestamp",
               "type" : "timestamp",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "The date and time when the data was loaded",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "modifiedtimestamp",
-              "type" : "timestamp",
+              "name" : "pipeline_id",
+              "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Identifier for the data processing pipeline",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Year when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "month",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Month when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "day",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Day of the month when the data was loaded",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -203,51 +230,72 @@
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
         "expressions" : [ {
-          "target" : "referencelevel1",
+          "target" : "col1",
           "expression" : {
             "format" : "sql",
-            "expression" : "referencelevel1"
+            "expression" : "col1"
           },
           "description" : ""
         }, {
-          "target" : "referencelevel2",
+          "target" : "col2",
           "expression" : {
             "format" : "sql",
-            "expression" : "referencelevel2"
+            "expression" : "col2"
           },
           "description" : ""
         }, {
-          "target" : "key",
+          "target" : "file_name",
           "expression" : {
             "format" : "sql",
-            "expression" : "key"
+            "expression" : "file_name"
           },
           "description" : ""
         }, {
-          "target" : "value",
+          "target" : "file_id",
           "expression" : {
             "format" : "sql",
-            "expression" : "value"
+            "expression" : "file_id"
           },
           "description" : ""
         }, {
-          "target" : "createdtimestamp",
+          "target" : "load_timestamp",
           "expression" : {
             "format" : "sql",
-            "expression" : "current_timestamp()"
+            "expression" : "load_timestamp"
           },
           "description" : ""
         }, {
-          "target" : "modifiedtimestamp",
+          "target" : "pipeline_id",
           "expression" : {
             "format" : "sql",
-            "expression" : "modifiedtimestamp"
+            "expression" : "pipeline_id"
+          },
+          "description" : ""
+        }, {
+          "target" : "year",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "year"
+          },
+          "description" : ""
+        }, {
+          "target" : "month",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "month"
+          },
+          "description" : ""
+        }, {
+          "target" : "day",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "day"
           },
           "description" : ""
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##key", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##modifiedtimestamp", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##referencelevel2", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##referencelevel1", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##value" ]
+        "columnsSelector" : [ "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##col2", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##day", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##pipeline_id", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##year", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##file_id", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##month", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##col1", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##load_timestamp", "LedHMrUImF4TFprVn1_Sd$$nfdVLA3D1cS0bS5WMTS_6##file_name" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
@@ -274,56 +322,83 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "referencelevel1",
+              "name" : "col1",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "First column of data from the source dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "referencelevel2",
+              "name" : "col2",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Second column of data from the source dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "key",
+              "name" : "file_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Name of the file being processed",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "value",
-              "type" : "string",
+              "name" : "file_id",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Unique identifier for the file",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "createdtimestamp",
-              "type" : "timestamp",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "modifiedtimestamp",
+              "name" : "load_timestamp",
               "type" : "timestamp",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "The date and time when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "pipeline_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Identifier for the data processing pipeline",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "year",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Year when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "month",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Month when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "day",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Day of the month when the data was loaded",
                 "mappings" : [ ],
                 "tags" : [ ]
               }

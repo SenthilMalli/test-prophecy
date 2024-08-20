@@ -7,4 +7,4 @@ from pl_test_ntz.config.ConfigStore import *
 from pl_test_ntz.functions import *
 
 def src_ds(spark: SparkSession) -> DataFrame:
-    return spark.read.table("`cultureamp_ingest_ndev`.`surveylookup_s_tbl`")
+    return spark.read.table("`sst_ingest_ndev`.`opsdeadlock1_ns_tbl`")

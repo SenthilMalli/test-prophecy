@@ -8,10 +8,13 @@ from pl_test_ntz.functions import *
 
 def add_created_timestamp(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
-        col("referencelevel1"), 
-        col("referencelevel2"), 
-        col("key"), 
-        col("value"), 
-        current_timestamp().alias("createdtimestamp"), 
-        col("modifiedtimestamp")
+        col("col1"), 
+        col("col2"), 
+        col("file_name"), 
+        col("file_id"), 
+        col("load_timestamp"), 
+        col("pipeline_id"), 
+        col("year"), 
+        col("month"), 
+        col("day")
     )

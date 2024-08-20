@@ -93,8 +93,8 @@
       "metadata" : {
         "label" : "src_ds",
         "slug" : "src_ds",
-        "x" : -120,
-        "y" : -260,
+        "x" : -740,
+        "y" : -440,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -122,8 +122,8 @@
       "metadata" : {
         "label" : "add_created_timestamp",
         "slug" : "add_created_timestamp",
-        "x" : 20,
-        "y" : -260,
+        "x" : -340,
+        "y" : -420,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -256,7 +256,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col1", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col2" ]
+        "columnsSelector" : [ "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col2", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col1" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
@@ -269,8 +269,8 @@
       "metadata" : {
         "label" : "tgt_ds",
         "slug" : "tgt_ds",
-        "x" : 180,
-        "y" : -260,
+        "x" : 100,
+        "y" : -420,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
