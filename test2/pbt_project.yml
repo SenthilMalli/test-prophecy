@@ -52,6 +52,7 @@ pipelines:
     datasets:
       inputs:
       - datasets/src_ds_test
+      - datasets/src_ds_test_in2
       outputs:
       - datasets/tgt_ds_test
     subgraphs: []
@@ -109,6 +110,19 @@ datasets:
         description: ''
         author: senthilmalli.parameswaran@mnscorp.net
         createdAt: '2024-08-20 11:55:06'
+  datasets/src_ds_test_in2:
+    name: src_ds_test_in2
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-08-20 12:57:21'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-08-20 12:57:21'
 templates: {}
 jobs:
   jobs/Job_test_observability:

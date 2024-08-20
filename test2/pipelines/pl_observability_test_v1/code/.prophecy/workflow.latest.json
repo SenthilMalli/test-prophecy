@@ -85,9 +85,21 @@
     "target" : "7QpKpw-mpjB1MbLqiEZDr$$voIJcXc0DOTfoSKBykzyN",
     "targetPort" : "3HZExwrripGXL51SPKn2D$$ZPrlJ30T_U9VZcGUx3--4"
   }, {
-    "id" : "H736j2bofpvoumSWLpYOX$$xQFq7mOIuy-xlSKQAeGix",
+    "id" : "hJDtRyHhVNg4funI1B1FZ$$l-z9BhcOWQA-basAwUZmx",
+    "source" : "0fOR39nett9fFG2bQ7RSg$$xdB8DX35Q2v8PBStK1a28",
+    "sourcePort" : "bkgwKAcYM0cYLKEycN3EE$$CIQEqqENDzhdOWoOW5IH_",
+    "target" : "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_",
+    "targetPort" : "FEBZzKc8xvpArE_l6lhr6$$VKI92Hv5Kyiq6o-DE4ya8"
+  }, {
+    "id" : "1XCELeraocyqe9BHZD7I7",
     "source" : "TRJmnemKYCAGUih3FrzoM$$JMTbjGBBLapLkLEqCABWH",
     "sourcePort" : "rph-AT7AuvMz4D83i8Pps$$VIgtpbpX3SygFQfelMlYW",
+    "target" : "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_",
+    "targetPort" : "-1c4nq-MrFljaL_yNqczB$$__iDRGJYmdueIoVEsQByz"
+  }, {
+    "id" : "MVwvuAx67Hr1PSaVcfpfP$$a4DEwITah1ccfxi7ldetp",
+    "source" : "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_",
+    "sourcePort" : "c4X_dK51WD3-AokhoLjZr$$DRlI8GB-W88FieYhorhTE",
     "target" : "6IOE4xzBcj6kYnMIQjMNC$$hzWtLzPETmLPhIfuYVMkr",
     "targetPort" : "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2"
   } ],
@@ -98,13 +110,13 @@
       "metadata" : {
         "label" : "reformat_columns_1",
         "slug" : "reformat_columns_1",
-        "x" : -520,
-        "y" : -340,
+        "x" : -300,
+        "y" : -140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Standardizes data by converting specific columns to a fixed decimal format.",
+        "comment" : "Standardizes data by reformatting specific columns to a consistent decimal format.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -114,7 +126,7 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
-              "name" : "col1",
+              "name" : "s1_col1",
               "type" : "integer",
               "nullable" : true,
               "metadata" : {
@@ -123,7 +135,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "col2",
+              "name" : "s1_col2",
               "type" : "integer",
               "nullable" : true,
               "metadata" : {
@@ -132,7 +144,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "col3",
+              "name" : "s1_col3",
               "type" : "double",
               "nullable" : true,
               "metadata" : {
@@ -141,11 +153,38 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "load_timestamp",
+              "name" : "s1_load_timestamp",
               "type" : "timestamp",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "First data column for the source dataset",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Second data column for the test dataset",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp when the data was loaded",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -167,7 +206,7 @@
           "target" : "col1",
           "expression" : {
             "format" : "sql",
-            "expression" : "CAST(col1 AS DECIMAL(10,2))"
+            "expression" : "CAST(s1_col1 AS DECIMAL(10,2))"
           },
           "description" : ""
         }, {
@@ -181,7 +220,7 @@
           "target" : "col3",
           "expression" : {
             "format" : "sql",
-            "expression" : "CAST(col3 AS DECIMAL(10,2))"
+            "expression" : "CAST(s1_col3 AS DECIMAL(10,2))"
           },
           "description" : ""
         }, {
@@ -194,7 +233,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##col3", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##load_timestamp", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##col2", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##col1" ]
+        "columnsSelector" : [ "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##s1_col1", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##load_timestamp", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##s1_col3", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##col2" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
@@ -207,8 +246,8 @@
       "metadata" : {
         "label" : "tgt_ds_test",
         "slug" : "tgt_ds_test",
-        "x" : -260,
-        "y" : -340,
+        "x" : -60,
+        "y" : -140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -233,10 +272,10 @@
               }
             }, {
               "name" : "col2",
-              "type" : "integer",
+              "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Second data column for the test dataset",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -254,7 +293,7 @@
               "type" : "timestamp",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Timestamp when the data was loaded",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -310,7 +349,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Transforms and formats data columns, including converting data types and adjusting timestamps to a specific timezone.",
+        "comment" : "Transforms and reformats data columns for better analysis and consistency.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -370,28 +409,28 @@
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
         "expressions" : [ {
-          "target" : "col1",
+          "target" : "s1_col1",
           "expression" : {
             "format" : "sql",
             "expression" : "CAST(col1 AS INT)"
           },
           "description" : ""
         }, {
-          "target" : "col2",
+          "target" : "s1_col2",
           "expression" : {
             "format" : "sql",
             "expression" : "CAST(col2 AS INT)"
           },
           "description" : ""
         }, {
-          "target" : "col3",
+          "target" : "s1_col3",
           "expression" : {
             "format" : "sql",
             "expression" : "col2*col1"
           },
           "description" : ""
         }, {
-          "target" : "load_timestamp",
+          "target" : "s1_load_timestamp",
           "expression" : {
             "format" : "sql",
             "expression" : "from_utc_timestamp(CAST(load_timestamp AS TIMESTAMP), 'Europe/London')"
@@ -405,6 +444,170 @@
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_" : {
+      "id" : "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "inner_join",
+        "slug" : "inner_join",
+        "x" : -520,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Merges two datasets to find matching records based on a common identifier.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-1c4nq-MrFljaL_yNqczB$$__iDRGJYmdueIoVEsQByz",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "s1_col1",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_col2",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_col3",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "FEBZzKc8xvpArE_l6lhr6$$VKI92Hv5Kyiq6o-DE4ya8",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "col1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "First data column for the source dataset",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Second data column for the test dataset",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "c4X_dK51WD3-AokhoLjZr$$DRlI8GB-W88FieYhorhTE",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.s1_col2=in1.col1"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ ],
+        "hints" : [ {
+          "id" : "-1c4nq-MrFljaL_yNqczB$$__iDRGJYmdueIoVEsQByz",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "FEBZzKc8xvpArE_l6lhr6$$VKI92Hv5Kyiq6o-DE4ya8",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "-1c4nq-MrFljaL_yNqczB$$__iDRGJYmdueIoVEsQByz##s1_col2", "FEBZzKc8xvpArE_l6lhr6$$VKI92Hv5Kyiq6o-DE4ya8##col1" ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "in0"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "0fOR39nett9fFG2bQ7RSg$$xdB8DX35Q2v8PBStK1a28" : {
+      "id" : "0fOR39nett9fFG2bQ7RSg$$xdB8DX35Q2v8PBStK1a28",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_ds_test_in2",
+        "slug" : "src_ds_test_in2",
+        "x" : -740,
+        "y" : -80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "bkgwKAcYM0cYLKEycN3EE$$CIQEqqENDzhdOWoOW5IH_",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_ds_test_in2"
       }
     }
   },

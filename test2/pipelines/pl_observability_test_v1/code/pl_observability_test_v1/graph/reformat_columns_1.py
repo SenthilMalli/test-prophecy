@@ -8,8 +8,8 @@ from pl_observability_test_v1.functions import *
 
 def reformat_columns_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
-        col("col1").cast(DecimalType(10, 2)).alias("col1"), 
+        col("s1_col1").cast(DecimalType(10, 2)).alias("col1"), 
         col("col2"), 
-        col("col3").cast(DecimalType(10, 2)).alias("col3"), 
+        col("s1_col3").cast(DecimalType(10, 2)).alias("col3"), 
         col("load_timestamp")
     )
