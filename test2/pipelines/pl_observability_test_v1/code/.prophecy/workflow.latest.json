@@ -9,7 +9,8 @@
       "plibVersion" : {
         "mavenVersion" : "8.0.29",
         "pyPiVersion" : "1.9.9"
-      }
+      },
+      "instrumentationEnabled" : true
     },
     "id" : "1",
     "uri" : "pipelines/pl_observability_test_v1",

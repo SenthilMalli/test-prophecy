@@ -6,6 +6,7 @@ from prophecy.libs import typed_lit
 from pl_observability_test_v1.config.ConfigStore import *
 from pl_observability_test_v1.functions import *
 
+@instrument
 def reformat_columns(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         col("col1").cast(IntegerType()).alias("s1_col1"), 

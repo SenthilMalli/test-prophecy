@@ -6,5 +6,6 @@ from prophecy.libs import typed_lit
 from pl_observability_test_v1.config.ConfigStore import *
 from pl_observability_test_v1.functions import *
 
+@instrument
 def tgt_ds_test(spark: SparkSession, in0: DataFrame):
     in0.write.format("delta").mode("append").saveAsTable("`sst_ingest_ndev`.`test_output_observability`")
