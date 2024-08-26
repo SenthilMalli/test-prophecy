@@ -9,7 +9,7 @@ schema:
       description: First column of data from the source dataset
       mappings: []
       tags: []
-  - name: col2
+  - name: col3
     type: string
     nullable: true
     metadata:

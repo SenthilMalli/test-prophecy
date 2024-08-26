@@ -10,6 +10,6 @@ from pl_test_observability.functions import *
 def add_created_timestamp(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         col("col1"), 
-        col("col2"), 
+        col("col2").alias("col3"), 
         from_utc_timestamp(current_timestamp(), "Europe/London").alias("load_timestamp")
     )

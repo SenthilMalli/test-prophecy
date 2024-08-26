@@ -128,7 +128,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Adds a timestamp indicating when the data was processed.",
+        "comment" : "Adds a timestamp indicating when the data was processed, using London time zone.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -240,7 +240,7 @@
           },
           "description" : ""
         }, {
-          "target" : "col2",
+          "target" : "col3",
           "expression" : {
             "format" : "sql",
             "expression" : "col2"
@@ -256,7 +256,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col2", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col1" ]
+        "columnsSelector" : [ "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col1", "T3-OiOLAbJ2JvcLefLUKr$$qhiOXtnnlEgGIiN3l4_OH##col2" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.25&projectSubscriptionProjectId=51&path=gems/Reformat",
@@ -294,7 +294,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "col2",
+              "name" : "col3",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
