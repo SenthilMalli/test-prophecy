@@ -65,7 +65,7 @@
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : false,
-    "visualCodeInterimMode" : "Full",
+    "visualCodeInterimMode" : "Disabled",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
