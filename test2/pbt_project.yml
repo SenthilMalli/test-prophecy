@@ -192,7 +192,7 @@ projectDependencies:
     version: 0.0.8
     isDefault: true
     author: null
-    createdAt: '2024-08-19 15:05:11'
+    createdAt: '2024-09-10 10:55:04'
   '51':
     projectUID: 51
     projectName: ProphecySparkBasicsPython
@@ -200,7 +200,7 @@ projectDependencies:
     version: 0.2.25
     isDefault: true
     author: null
-    createdAt: '2024-08-19 15:05:11'
+    createdAt: '2024-09-10 10:55:04'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}
