@@ -13,7 +13,7 @@ schema:
     type: string
     nullable: true
     metadata:
-      description: Second data column for the test dataset
+      description: Description or label for the record
       mappings: []
       tags: []
   - name: col3
@@ -27,6 +27,7 @@ schema:
     type: timestamp
     nullable: true
     metadata:
-      description: Timestamp when the data was loaded
+      description: Timestamp when the record was loaded into the system; Format is
+        ISO 8601 (YYYY-MM-DDTHH:MM:SS.sssZ).
       mappings: []
       tags: []

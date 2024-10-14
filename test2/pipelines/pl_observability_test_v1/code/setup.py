@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(
-    name = 'pl_observability_test_v1',
+    name = 'pl_observability_test_v1_all_sampling',
     version = '1.0',
     packages = find_packages(include = ('pl_observability_test_v1*', )) + ['prophecy_config_instances'],
     package_dir = {'prophecy_config_instances' : 'configs/resources/config'},

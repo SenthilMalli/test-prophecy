@@ -1,0 +1,622 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.31",
+        "pyPiVersion" : "1.9.9"
+      },
+      "instrumentationEnabled" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/pl_observability_test_v1_vanilla",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pl_observability_test_v1",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "3",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "testsst.projtestmetrics.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.warehouse.functions", "prophecy.spark_basic.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "52",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "51",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Vanilla",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Full",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pl_observability_test_v1_vanilla",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "oJU98caRo4zFsbtSivRYu$$HH-IsHP7ZufCdOJaMuAhf",
+    "source" : "TXpEUXBIKHYGTSm8ZsjTC$$GROT6C0bbVm4yi_JePKLB",
+    "sourcePort" : "r2qRnbiV25e3ziGts9npe$$SGI6n-dqRuf7FDvKa-nqa",
+    "target" : "TRJmnemKYCAGUih3FrzoM$$JMTbjGBBLapLkLEqCABWH",
+    "targetPort" : "o3AoMrA4kyhrQ_gFXMNkK$$HAFRhfvojUws0y8XurKBs"
+  }, {
+    "id" : "OgZlCcnbDUwouYcHg6CXJ$$656ubKMGOdOAq6KB_h2rg",
+    "source" : "6IOE4xzBcj6kYnMIQjMNC$$hzWtLzPETmLPhIfuYVMkr",
+    "sourcePort" : "_fAsXq20EEY6N3M5ikIg3$$7fLf8UXPZoHXa4ZbxHYd6",
+    "target" : "7QpKpw-mpjB1MbLqiEZDr$$voIJcXc0DOTfoSKBykzyN",
+    "targetPort" : "3HZExwrripGXL51SPKn2D$$ZPrlJ30T_U9VZcGUx3--4"
+  }, {
+    "id" : "hJDtRyHhVNg4funI1B1FZ$$l-z9BhcOWQA-basAwUZmx",
+    "source" : "0fOR39nett9fFG2bQ7RSg$$xdB8DX35Q2v8PBStK1a28",
+    "sourcePort" : "bkgwKAcYM0cYLKEycN3EE$$CIQEqqENDzhdOWoOW5IH_",
+    "target" : "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_",
+    "targetPort" : "FEBZzKc8xvpArE_l6lhr6$$VKI92Hv5Kyiq6o-DE4ya8"
+  }, {
+    "id" : "1XCELeraocyqe9BHZD7I7",
+    "source" : "TRJmnemKYCAGUih3FrzoM$$JMTbjGBBLapLkLEqCABWH",
+    "sourcePort" : "rph-AT7AuvMz4D83i8Pps$$VIgtpbpX3SygFQfelMlYW",
+    "target" : "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_",
+    "targetPort" : "-1c4nq-MrFljaL_yNqczB$$__iDRGJYmdueIoVEsQByz"
+  }, {
+    "id" : "MVwvuAx67Hr1PSaVcfpfP$$a4DEwITah1ccfxi7ldetp",
+    "source" : "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_",
+    "sourcePort" : "c4X_dK51WD3-AokhoLjZr$$DRlI8GB-W88FieYhorhTE",
+    "target" : "6IOE4xzBcj6kYnMIQjMNC$$hzWtLzPETmLPhIfuYVMkr",
+    "targetPort" : "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2"
+  } ],
+  "processes" : {
+    "6IOE4xzBcj6kYnMIQjMNC$$hzWtLzPETmLPhIfuYVMkr" : {
+      "id" : "6IOE4xzBcj6kYnMIQjMNC$$hzWtLzPETmLPhIfuYVMkr",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "reformat_columns_1",
+        "slug" : "reformat_columns_1",
+        "x" : -300,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Standardizes data by reformatting specific columns to a consistent decimal format.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "s1_col1",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_col2",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_col3",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for each record in the dataset",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description or label for the record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp when the record was loaded into the system; Format is ISO 8601 (YYYY-MM-DDTHH:MM:SS.sssZ).",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "_fAsXq20EEY6N3M5ikIg3$$7fLf8UXPZoHXa4ZbxHYd6",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "col1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(s1_col1 AS DECIMAL(10,2))"
+          },
+          "description" : ""
+        }, {
+          "target" : "col2",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "col2"
+          },
+          "description" : ""
+        }, {
+          "target" : "col3",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(s1_col3 AS DECIMAL(10,2))"
+          },
+          "description" : ""
+        }, {
+          "target" : "load_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "load_timestamp"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##s1_col1", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##load_timestamp", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##s1_col3", "POHYykTRAJTPHDqBllJgT$$qi_bQYXodiZIvcqyFSSh2##col2" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "7QpKpw-mpjB1MbLqiEZDr$$voIJcXc0DOTfoSKBykzyN" : {
+      "id" : "7QpKpw-mpjB1MbLqiEZDr$$voIJcXc0DOTfoSKBykzyN",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "tgt_ds_test",
+        "slug" : "tgt_ds_test",
+        "x" : -60,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Appends new data to the 'test_output_observability' table for ongoing analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3HZExwrripGXL51SPKn2D$$ZPrlJ30T_U9VZcGUx3--4",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "col1",
+              "type" : "decimal(10,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description or label for the record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col3",
+              "type" : "decimal(10,2)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp when the record was loaded into the system; Format is ISO 8601 (YYYY-MM-DDTHH:MM:SS.sssZ).",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/tgt_ds_test"
+      }
+    },
+    "TXpEUXBIKHYGTSm8ZsjTC$$GROT6C0bbVm4yi_JePKLB" : {
+      "id" : "TXpEUXBIKHYGTSm8ZsjTC$$GROT6C0bbVm4yi_JePKLB",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_ds_test",
+        "slug" : "src_ds_test",
+        "x" : -920,
+        "y" : -340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "r2qRnbiV25e3ziGts9npe$$SGI6n-dqRuf7FDvKa-nqa",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_ds_test"
+      }
+    },
+    "TRJmnemKYCAGUih3FrzoM$$JMTbjGBBLapLkLEqCABWH" : {
+      "id" : "TRJmnemKYCAGUih3FrzoM$$JMTbjGBBLapLkLEqCABWH",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "reformat_columns",
+        "slug" : "reformat_columns",
+        "x" : -700,
+        "y" : -340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Transforms and reformats data columns for better analysis and consistency.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "o3AoMrA4kyhrQ_gFXMNkK$$HAFRhfvojUws0y8XurKBs",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "col1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for each record in the dataset",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Second value in the dataset; Represents a numerical string value.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col3",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description or label for the record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp indicating when the record was loaded into the dataset; Format is ISO 8601 (YYYY-MM-DDTHH:MM:SS.sssZ).",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "rph-AT7AuvMz4D83i8Pps$$VIgtpbpX3SygFQfelMlYW",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "s1_col1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(col1 AS INT)"
+          },
+          "description" : ""
+        }, {
+          "target" : "s1_col2",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(col2 AS INT)"
+          },
+          "description" : ""
+        }, {
+          "target" : "s1_col3",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "col2*col1"
+          },
+          "description" : ""
+        }, {
+          "target" : "s1_load_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "from_utc_timestamp(CAST(load_timestamp AS TIMESTAMP), 'Europe/London')"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "o3AoMrA4kyhrQ_gFXMNkK$$HAFRhfvojUws0y8XurKBs##col2", "o3AoMrA4kyhrQ_gFXMNkK$$HAFRhfvojUws0y8XurKBs##load_timestamp", "o3AoMrA4kyhrQ_gFXMNkK$$HAFRhfvojUws0y8XurKBs##col1" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_" : {
+      "id" : "AuN9tJFx26ZcFfHxEhZtW$$UNlR-tg7n-dosOZc5asc_",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "inner_join",
+        "slug" : "inner_join",
+        "x" : -520,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Merges two datasets to find matching records based on a common identifier.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-1c4nq-MrFljaL_yNqczB$$__iDRGJYmdueIoVEsQByz",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "s1_col1",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_col2",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_col3",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "s1_load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "FEBZzKc8xvpArE_l6lhr6$$VKI92Hv5Kyiq6o-DE4ya8",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "col1",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for each record in the dataset",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description or label for the record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Timestamp when the record was loaded into the system; Format is ISO 8601 (YYYY-MM-DDTHH:MM:SS.sssZ).",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "c4X_dK51WD3-AokhoLjZr$$DRlI8GB-W88FieYhorhTE",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.s1_col2=in1.col1"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ ],
+        "hints" : [ {
+          "id" : "-1c4nq-MrFljaL_yNqczB$$__iDRGJYmdueIoVEsQByz",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "FEBZzKc8xvpArE_l6lhr6$$VKI92Hv5Kyiq6o-DE4ya8",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "-1c4nq-MrFljaL_yNqczB$$__iDRGJYmdueIoVEsQByz##s1_col2", "FEBZzKc8xvpArE_l6lhr6$$VKI92Hv5Kyiq6o-DE4ya8##col1" ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "in0"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "0fOR39nett9fFG2bQ7RSg$$xdB8DX35Q2v8PBStK1a28" : {
+      "id" : "0fOR39nett9fFG2bQ7RSg$$xdB8DX35Q2v8PBStK1a28",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_ds_test_in2",
+        "slug" : "src_ds_test_in2",
+        "x" : -740,
+        "y" : -80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "bkgwKAcYM0cYLKEycN3EE$$CIQEqqENDzhdOWoOW5IH_",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_ds_test_in2"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

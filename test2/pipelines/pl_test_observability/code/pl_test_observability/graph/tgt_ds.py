@@ -8,4 +8,4 @@ from pl_test_observability.functions import *
 
 @instrument
 def tgt_ds(spark: SparkSession, in0: DataFrame):
-    in0.write.format("delta").mode("overwrite").saveAsTable("`sst_ingest_ndev`.`observability_test`")
+    in0.write.format("delta").mode("overwrite").saveAsTable("`sst_ingest_ndev`.`s4_ntz_test`")

@@ -42,7 +42,7 @@ pipelines:
     subgraphs: []
     dependencies: {}
   pipelines/pl_observability_test_v1:
-    name: pl_observability_test_v1
+    name: pl_observability_test_v1_all_sampling
     description: Testing observability feature
     author: senthilmalli.parameswaran@mnscorp.net
     mode: batch
@@ -68,6 +68,86 @@ pipelines:
     datasets:
       inputs: []
       outputs: []
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_observability_test_v1_InputOnly:
+    name: pl_observability_test_v1_source
+    description: null
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-14 22:19:42'
+    datasets:
+      inputs:
+      - datasets/src_ds_test
+      - datasets/src_ds_test_in2
+      outputs:
+      - datasets/tgt_ds_test
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_observability_test_v1_targets:
+    name: pl_observability_test_v1_targets
+    description: null
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-14 22:23:26'
+    datasets:
+      inputs:
+      - datasets/src_ds_test
+      - datasets/src_ds_test_in2
+      outputs:
+      - datasets/tgt_ds_test
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_observability_test_v1_io:
+    name: pl_observability_test_v1_io
+    description: null
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-14 22:25:30'
+    datasets:
+      inputs:
+      - datasets/src_ds_test
+      - datasets/src_ds_test_in2
+      outputs:
+      - datasets/tgt_ds_test
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_observability_test_v1_vanilla:
+    name: pl_observability_test_v1_vanilla
+    description: null
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-14 22:27:46'
+    datasets:
+      inputs:
+      - datasets/src_ds_test
+      - datasets/src_ds_test_in2
+      outputs:
+      - datasets/tgt_ds_test
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_observability_test_v1_jobsampling_disabled:
+    name: pl_observability_test_v1_jobsampling_disabled
+    description: null
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-14 22:32:36'
+    datasets:
+      inputs:
+      - datasets/src_ds_test
+      - datasets/src_ds_test_in2
+      outputs:
+      - datasets/tgt_ds_test
     subgraphs: []
     dependencies: {}
 datasets:
