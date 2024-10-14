@@ -63,9 +63,9 @@
       "externalDependencies" : [ ]
     } ],
     "isImported" : false,
-    "interimMode" : "Full",
+    "interimMode" : "Vanilla",
     "interimModeEnabled" : false,
-    "visualCodeInterimMode" : "Disabled",
+    "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000

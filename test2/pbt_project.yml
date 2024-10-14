@@ -57,6 +57,19 @@ pipelines:
       - datasets/tgt_ds_test
     subgraphs: []
     dependencies: {}
+  pipelines/testcopilot:
+    name: testcopilot
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-09-20 08:41:53'
+    datasets:
+      inputs: []
+      outputs: []
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -149,6 +162,7 @@ jobs:
     createdAt: '2024-08-06 08:58:40'
     author: senthilmalli.parameswaran@mnscorp.net
     models: []
+    sqlProjects: []
 gemContainer:
   languageVersion: '3.10'
   gemLibsVersion: 1.3.4.0
@@ -175,15 +189,22 @@ dependencies:
 - type: plibMaven
   modifiedAt: '2024-08-20T13:33:15.651565Z'
   name: plibMaven
-  version: 8.0.29
+  version: 8.0.31
   id: '369041759'
   createdAt: '2024-08-20T13:33:15.651484Z'
+  enabled: true
+  entity: Project
 - type: plibPypi
-  modifiedAt: '2024-08-20T13:33:15.651594Z'
-  name: plibPypi
+  modifiedAt: '2024-10-14T21:58:52.228Z'
+  name: ProphecyLibsPython
   version: 1.9.9
   id: '320894472'
   createdAt: '2024-08-20T13:33:15.651588Z'
+  enabled: true
+  entity: Project
+  description: Default dependency for Prophecy Libs
+  scope: Project
+  editable: true
 projectDependencies:
   '52':
     projectUID: 52
@@ -192,15 +213,15 @@ projectDependencies:
     version: 0.0.8
     isDefault: true
     author: null
-    createdAt: '2024-09-10 10:55:04'
+    createdAt: '2024-10-04 08:52:37'
   '51':
     projectUID: 51
     projectName: ProphecySparkBasicsPython
     repositoryPath: gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=
-    version: 0.2.25
+    version: 0.2.28
     isDefault: true
     author: null
-    createdAt: '2024-09-10 10:55:04'
+    createdAt: '2024-10-14 21:58:26'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

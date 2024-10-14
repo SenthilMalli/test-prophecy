@@ -7,4 +7,6 @@ from pl_test_ntz.config.ConfigStore import *
 from pl_test_ntz.functions import *
 
 def src_ds(spark: SparkSession) -> DataFrame:
-    return spark.read.table("`sst_ingest_ndev`.`opsdeadlock1_ns_tbl`")
+    return spark.read\
+        .format("parquet")\
+        .load("dbfs:/mnt/landing/prophecy/s4/sourcesample/part-Z1uDuYqG3pMk8SHX-Gw_MOFZjz1D4iA3w.parquet")
