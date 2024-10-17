@@ -4,9 +4,10 @@ from pyspark.sql.types import *
 from testcopilot.config.ConfigStore import *
 from testcopilot.functions import *
 from prophecy.utils import *
+from testcopilot.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    pass
+    df_SodaDataQualityCheck_0 = SodaDataQualityCheck_0(spark)
 
 def main():
     spark = SparkSession.builder\
