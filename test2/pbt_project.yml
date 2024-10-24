@@ -284,6 +284,32 @@ jobs:
     author: senthilmalli.parameswaran@mnscorp.net
     models: []
     sqlProjects: []
+  jobs/test1:
+    name: test1
+    description: sample
+    fabricUID: 3
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/pls_metrics_ops_v1
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-10-24 05:11:04'
+    author: senthilmalli.parameswaran@mnscorp.net
+    models: []
+    sqlProjects: []
 gemContainer:
   languageVersion: '3.10'
   gemLibsVersion: 1.3.4.0

@@ -1,15 +1,15 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "13",
-    "jobId" : "jobs/Job_test_observability",
-    "name" : "Job_test_observability",
-    "schedule" : "0 6 18 * * ? *",
+    "fabricId" : "3",
+    "jobId" : "jobs/test1",
+    "name" : "test1",
+    "schedule" : "0 0 0 1 * ? *",
     "scheduleTimeZone" : "UTC",
     "jobClusterMode" : {
       "clusterMode" : "Single"
     },
-    "enabled" : true,
+    "enabled" : false,
     "defaultClusterSize" : "small",
     "alerting" : {
       "emails" : "",
@@ -19,47 +19,41 @@
     },
     "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
-      "type" : "Inherited",
       "retries" : 0,
-      "alerting" : {
-        "emails" : "",
-        "onStart" : false,
-        "onSuccess" : false,
-        "onFailure" : false
-      }
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
     }
   },
   "processes" : {
-    "mQjujU643bKFe-4PvS_3V$$U6k1ERjIAKuCpaUPZEb1B" : {
-      "id" : "mQjujU643bKFe-4PvS_3V$$U6k1ERjIAKuCpaUPZEb1B",
+    "yPm2SYj8jO0yW9Xjjedq6$$Ooz_7X_Nm1ZEDwo87o19p" : {
+      "id" : "yPm2SYj8jO0yW9Xjjedq6$$Ooz_7X_Nm1ZEDwo87o19p",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "pl_test_observability",
-        "slug" : "pl_test_observability",
-        "x" : -400,
-        "y" : -120
+        "label" : "pls_metrics_ops_v1",
+        "slug" : "pls_metrics_ops_v1",
+        "x" : -80.40010833740234,
+        "y" : 8.889541625976562
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "mgVC8tZNlPx1mitX1ywoC$$aqnRatr7Yl50MA3HdpGjY",
+          "id" : "KWvsOq7Vfsmi26oBpE5rs$$ynr4Kxez5zyVVx4IAeTE5",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "t4ch-bVYY9Ki2_kHH-8rX$$zCmvxcgeh8F9AWdwS9EYX",
+          "id" : "ZFMsUjWR7dy9DeoQ54miL$$PbfJx590vYoGJvsp11yFg",
           "slug" : ""
         } ]
       },
       "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
       },
       "properties" : {
-        "pipelineId" : "pipelines/pl_test_observability",
+        "pipelineId" : "pipelines/pls_metrics_ops_v1",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
