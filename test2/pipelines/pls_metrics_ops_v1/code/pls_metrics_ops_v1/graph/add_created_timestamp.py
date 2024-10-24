@@ -6,6 +6,7 @@ from prophecy.libs import typed_lit
 from pls_metrics_ops_v1.config.ConfigStore import *
 from pls_metrics_ops_v1.functions import *
 
+@instrument
 def add_created_timestamp(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         col("transdate"), 

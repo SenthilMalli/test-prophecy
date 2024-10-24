@@ -9,7 +9,8 @@
       "plibVersion" : {
         "mavenVersion" : "8.0.31",
         "pyPiVersion" : "1.9.9"
-      }
+      },
+      "instrumentationEnabled" : true
     },
     "id" : "1",
     "uri" : "pipelines/pls_metrics_ops_v1",
@@ -92,8 +93,8 @@
       "metadata" : {
         "label" : "src_tbl_pq_metrics_test2",
         "slug" : "src_tbl_pq_metrics_test2",
-        "x" : 240,
-        "y" : 300,
+        "x" : 40,
+        "y" : 280,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
