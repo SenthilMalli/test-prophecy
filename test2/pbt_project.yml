@@ -150,6 +150,21 @@ pipelines:
       - datasets/tgt_ds_test
     subgraphs: []
     dependencies: {}
+  pipelines/pls_metrics_ops_v1:
+    name: pls_metrics_ops_v1
+    description: Operations frequent issues observability test
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-22 04:04:27'
+    datasets:
+      inputs:
+      - datasets/src_tbl_pq_metrics_test2
+      outputs:
+      - datasets/tgt_tbl_pq_metric_r1
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -216,6 +231,32 @@ datasets:
         description: ''
         author: senthilmalli.parameswaran@mnscorp.net
         createdAt: '2024-08-20 12:57:21'
+  datasets/src_tbl_pq_metrics_test2:
+    name: src_tbl_pq_metrics_test2
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-24 04:34:45'
+    mode: batch
+    physicalDatasets:
+      ndev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-24 04:34:45'
+  datasets/tgt_tbl_pq_metric_r1:
+    name: tgt_tbl_pq_metric_r1
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-24 04:38:53'
+    mode: batch
+    physicalDatasets:
+      ndev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-24 04:38:53'
 templates: {}
 jobs:
   jobs/Job_test_observability:
@@ -267,19 +308,19 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-08-20T13:33:15.651565Z'
+  modifiedAt: '2024-10-22T04:04:29.042062Z'
   name: plibMaven
   version: 8.0.31
-  id: '369041759'
-  createdAt: '2024-08-20T13:33:15.651484Z'
+  id: '995577924'
+  createdAt: '2024-10-22T04:04:29.042025Z'
   enabled: true
   entity: Project
 - type: plibPypi
-  modifiedAt: '2024-10-14T21:58:52.228Z'
+  modifiedAt: '2024-10-22T05:20:10.206Z'
   name: ProphecyLibsPython
   version: 1.9.9
-  id: '320894472'
-  createdAt: '2024-08-20T13:33:15.651588Z'
+  id: '91293620'
+  createdAt: '2024-10-22T04:04:29.042088Z'
   enabled: true
   entity: Project
   description: Default dependency for Prophecy Libs
