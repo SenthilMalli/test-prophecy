@@ -1,6 +1,6 @@
 name: proj_test_metrics
 description: ''
-version: '24.3'
+version: '24.4'
 author: senthilmalli.parameswaran@mnscorp.net
 language: python
 buildSystem: ''
