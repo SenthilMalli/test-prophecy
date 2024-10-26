@@ -23,6 +23,16 @@ def pipeline(spark: SparkSession) -> None:
         "cG8Ws0TqFcwcs5l2Q88Ps$$ktrhJe00Pc0lca0AUnNf8", 
         "oU_bDFhRIgwYAiZrH6VGc$$g05RHvM6HAdnQRoj2nN70"
     )
+    df_total_transactions = total_transactions(spark, df_src_tbl_pq_metrics_test2)
+    df_total_transactions = collectMetrics(
+        spark, 
+        df_total_transactions, 
+        "graph", 
+        "N_RMMYRbiDGA3OxJK4dzO$$S4HVzPGKhI7MbxJ6zrT2m", 
+        "y0lXN-VXGebAkoXtZR0Cr$$zicQL4u4JHtAC_8uZWjFu"
+    )
+    df_total_transactions.cache().count()
+    df_total_transactions.unpersist()
     tgt_tbl_pq_metric_r1(spark, df_add_created_timestamp)
 
 def main():

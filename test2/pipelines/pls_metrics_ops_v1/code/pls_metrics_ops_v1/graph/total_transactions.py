@@ -7,5 +7,5 @@ from pls_metrics_ops_v1.config.ConfigStore import *
 from pls_metrics_ops_v1.functions import *
 
 @instrument
-def src_tbl_pq_metrics_test2(spark: SparkSession) -> DataFrame:
-    return spark.read.table("`sst_ingest_ndev`.`pq_metrics_test2`")
+def total_transactions(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.agg(count(col("transdate")).alias("total_trans"))

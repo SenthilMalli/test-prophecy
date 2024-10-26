@@ -85,35 +85,14 @@
     "sourcePort" : "oU_bDFhRIgwYAiZrH6VGc$$g05RHvM6HAdnQRoj2nN70",
     "target" : "_q5G5PxfkEfPz0_mqajrq$$HeoOU1u7NsrQzcDt6AgmX",
     "targetPort" : "-AKMYpvKQAfjD1w-RTlsr$$Fvbn_slKfWuLKil8xc4Lz"
+  }, {
+    "id" : "D69Tn0zxtWesCN13vnInw",
+    "source" : "pgMALTu9cupCVVqPAYSBC$$eik3Ornf3SIH53FZCTbzy",
+    "sourcePort" : "MyxEePxzeIczNclKh9zAP$$JpcVv0RdN1PAJZvz3sPfR",
+    "target" : "N_RMMYRbiDGA3OxJK4dzO$$S4HVzPGKhI7MbxJ6zrT2m",
+    "targetPort" : "gDfYInmBU6z4zh-RvlafG$$saZH6-i6PtWc-s9D-2JXW"
   } ],
   "processes" : {
-    "pgMALTu9cupCVVqPAYSBC$$eik3Ornf3SIH53FZCTbzy" : {
-      "id" : "pgMALTu9cupCVVqPAYSBC$$eik3Ornf3SIH53FZCTbzy",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "src_tbl_pq_metrics_test2",
-        "slug" : "src_tbl_pq_metrics_test2",
-        "x" : 40,
-        "y" : 280,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "MyxEePxzeIczNclKh9zAP$$JpcVv0RdN1PAJZvz3sPfR",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/src_tbl_pq_metrics_test2"
-      }
-    },
     "cG8Ws0TqFcwcs5l2Q88Ps$$ktrhJe00Pc0lca0AUnNf8" : {
       "id" : "cG8Ws0TqFcwcs5l2Q88Ps$$ktrhJe00Pc0lca0AUnNf8",
       "component" : "Reformat",
@@ -214,6 +193,90 @@
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
+    "N_RMMYRbiDGA3OxJK4dzO$$S4HVzPGKhI7MbxJ6zrT2m" : {
+      "id" : "N_RMMYRbiDGA3OxJK4dzO$$S4HVzPGKhI7MbxJ6zrT2m",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "total_transactions",
+        "slug" : "total_transactions",
+        "x" : 340,
+        "y" : 460,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Calculates the total number of transactions.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gDfYInmBU6z4zh-RvlafG$$saZH6-i6PtWc-s9D-2JXW",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "transdate",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Transaction date; Date when the sales transaction occurred in YYYY-MM-DD format.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salesamt",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total sales amount for the transaction; Measured in whole currency units.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ymd",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date in YYYYMMDD format; Represents the transaction date as an integer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "y0lXN-VXGebAkoXtZR0Cr$$zicQL4u4JHtAC_8uZWjFu",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "allIns" : false,
+        "doPivot" : false,
+        "aggregate" : [ {
+          "target" : "total_trans",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "count(transdate)"
+          },
+          "description" : "",
+          "_row_id" : "c_16"
+        } ],
+        "allowSelection" : true,
+        "pivotColumn" : null,
+        "pivotValues" : [ ],
+        "activeTab" : "groupBy",
+        "columnsSelector" : [ "gDfYInmBU6z4zh-RvlafG$$saZH6-i6PtWc-s9D-2JXW##transdate" ],
+        "groupBy" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/Aggregate",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
     "_q5G5PxfkEfPz0_mqajrq$$HeoOU1u7NsrQzcDt6AgmX" : {
       "id" : "_q5G5PxfkEfPz0_mqajrq$$HeoOU1u7NsrQzcDt6AgmX",
       "component" : "Target",
@@ -280,6 +343,35 @@
       },
       "properties" : {
         "datasetId" : "datasets/tgt_tbl_pq_metric_r1"
+      }
+    },
+    "pgMALTu9cupCVVqPAYSBC$$eik3Ornf3SIH53FZCTbzy" : {
+      "id" : "pgMALTu9cupCVVqPAYSBC$$eik3Ornf3SIH53FZCTbzy",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_tbl_pq_metrics_test2",
+        "slug" : "src_tbl_pq_metrics_test2",
+        "x" : 40,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Retrieves data from the 'pq_metrics_test2' table for analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "MyxEePxzeIczNclKh9zAP$$JpcVv0RdN1PAJZvz3sPfR",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_tbl_pq_metrics_test2"
       }
     }
   },
