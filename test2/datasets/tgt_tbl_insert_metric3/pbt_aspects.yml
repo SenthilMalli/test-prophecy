@@ -3,23 +3,23 @@ schema:
   type: struct
   fields:
   - name: trandate
-    type: string
+    type: date
     nullable: true
     metadata:
-      description: The date when the transaction occurred
+      description: ''
       mappings: []
       tags: []
   - name: salesamt
-    type: string
+    type: decimal(10,0)
     nullable: true
     metadata:
-      description: Total sales amount for the transaction date
+      description: ''
       mappings: []
       tags: []
   - name: ymd
-    type: string
+    type: integer
     nullable: true
     metadata:
-      description: Date in Year-Month-Day format
+      description: ''
       mappings: []
       tags: []

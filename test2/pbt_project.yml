@@ -433,24 +433,17 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-10-28T19:48:23.515109Z'
+  modifiedAt: '2024-10-28T20:03:38.920311Z'
   name: plibMaven
-  version: 8.0.31
-  id: '1205415254'
-  createdAt: '2024-10-28T19:48:23.515078Z'
-  enabled: true
-  entity: Project
+  version: 8.1.4
+  id: '726032358'
+  createdAt: '2024-10-28T20:03:38.920283Z'
 - type: plibPypi
-  modifiedAt: '2024-10-28T19:50:50.956Z'
-  name: ProphecyLibsPython
-  version: 1.9.9
-  id: '1296789746'
-  createdAt: '2024-10-28T19:48:23.515133Z'
-  enabled: true
-  entity: Project
-  description: Default dependency for Prophecy Libs
-  scope: Project
-  editable: true
+  modifiedAt: '2024-10-28T20:03:38.920337Z'
+  name: plibPypi
+  version: 1.9.14
+  id: '1793429323'
+  createdAt: '2024-10-28T20:03:38.920331Z'
 projectDependencies:
   '52':
     projectUID: 52

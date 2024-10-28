@@ -128,7 +128,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Extracts sales transaction data for analysis.",
+        "comment" : "Prepares sales data by standardizing transaction dates, sales amounts, and date identifiers.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -182,21 +182,21 @@
           "target" : "trandate",
           "expression" : {
             "format" : "sql",
-            "expression" : "trandate"
+            "expression" : "cast(trandate as date)"
           },
           "description" : ""
         }, {
           "target" : "salesamt",
           "expression" : {
             "format" : "sql",
-            "expression" : "salesamt"
+            "expression" : "cast(salesamt as decimal)"
           },
           "description" : ""
         }, {
           "target" : "ymd",
           "expression" : {
             "format" : "sql",
-            "expression" : "ymd"
+            "expression" : "cast(ymd as int)"
           },
           "description" : ""
         } ],
@@ -232,28 +232,28 @@
             "type" : "struct",
             "fields" : [ {
               "name" : "trandate",
-              "type" : "string",
+              "type" : "date",
               "nullable" : true,
               "metadata" : {
-                "description" : "The date when the transaction occurred",
+                "description" : "",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
               "name" : "salesamt",
-              "type" : "string",
+              "type" : "decimal(10,0)",
               "nullable" : true,
               "metadata" : {
-                "description" : "Total sales amount for the transaction date",
+                "description" : "",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
               "name" : "ymd",
-              "type" : "string",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : {
-                "description" : "Date in Year-Month-Day format",
+                "description" : "",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
