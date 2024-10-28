@@ -11,5 +11,5 @@ def sales_projection(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         col("trandate").cast(DateType()).alias("trandate"), 
         col("salesamt").cast(DecimalType(10, 0)).alias("salesamt"), 
-        col("ymd").cast(IntegerType()).alias("ymd")
+        col("ymd").cast(DecimalType(10, 0)).alias("ymd")
     )

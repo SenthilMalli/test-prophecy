@@ -128,7 +128,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Prepares sales data for analysis by standardizing date and sales amount formats.",
+        "comment" : "Prepares sales data by standardizing transaction dates and sales amounts for future projections.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -196,7 +196,7 @@
           "target" : "ymd",
           "expression" : {
             "format" : "sql",
-            "expression" : "cast(ymd as int)"
+            "expression" : "cast(ymd as decimal)"
           },
           "description" : ""
         } ],
@@ -250,7 +250,7 @@
               }
             }, {
               "name" : "ymd",
-              "type" : "integer",
+              "type" : "decimal(10,0)",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
