@@ -1,0 +1,25 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: trandate
+    type: string
+    nullable: true
+    metadata:
+      description: Transaction date in YYYY-MM-DD format.
+      mappings: []
+      tags: []
+  - name: salesamt
+    type: string
+    nullable: true
+    metadata:
+      description: Total sales amount for the given date.
+      mappings: []
+      tags: []
+  - name: ymd
+    type: string
+    nullable: true
+    metadata:
+      description: Date in compact YYYYMMDD format for easy sorting and filtering.
+      mappings: []
+      tags: []

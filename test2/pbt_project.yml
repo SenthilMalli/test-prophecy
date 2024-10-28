@@ -180,6 +180,21 @@ pipelines:
       - datasets/tgt_tbl_metric3
     subgraphs: []
     dependencies: {}
+  pipelines/pl_metrics_ops_v3:
+    name: pl_metrics_ops_v3
+    description: File unavailability
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-28 15:42:35'
+    datasets:
+      inputs:
+      - datasets/src_csv_metric3
+      outputs:
+      - datasets/tgt_tbl_insert_metric3
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -285,6 +300,32 @@ datasets:
         description: ''
         author: senthilmalli.parameswaran@mnscorp.net
         createdAt: '2024-10-28 12:52:16'
+  datasets/src_csv_metric3:
+    name: src_csv_metric3
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-28 16:01:50'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: File
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-28 16:01:50'
+  datasets/tgt_tbl_insert_metric3:
+    name: tgt_tbl_insert_metric3
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-28 16:08:17'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-28 16:08:17'
 templates: {}
 jobs:
   jobs/Job_test_observability:
@@ -362,19 +403,19 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-10-22T04:04:29.042062Z'
+  modifiedAt: '2024-10-28T15:42:37.355934Z'
   name: plibMaven
   version: 8.0.31
-  id: '995577924'
-  createdAt: '2024-10-22T04:04:29.042025Z'
+  id: '633718902'
+  createdAt: '2024-10-28T15:42:37.355906Z'
   enabled: true
   entity: Project
 - type: plibPypi
-  modifiedAt: '2024-10-22T05:20:10.206Z'
+  modifiedAt: '2024-10-28T15:44:23.260Z'
   name: ProphecyLibsPython
   version: 1.9.9
-  id: '91293620'
-  createdAt: '2024-10-22T04:04:29.042088Z'
+  id: '1107619003'
+  createdAt: '2024-10-28T15:42:37.355955Z'
   enabled: true
   entity: Project
   description: Default dependency for Prophecy Libs
