@@ -9,7 +9,8 @@
       "plibVersion" : {
         "mavenVersion" : "8.0.31",
         "pyPiVersion" : "1.9.9"
-      }
+      },
+      "instrumentationEnabled" : true
     },
     "id" : "1",
     "uri" : "pipelines/pl_metrics_ops_v2",
@@ -63,8 +64,8 @@
     } ],
     "isImported" : false,
     "interimMode" : "Full",
-    "interimModeEnabled" : true,
-    "visualCodeInterimMode" : "Disabled",
+    "interimModeEnabled" : false,
+    "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
