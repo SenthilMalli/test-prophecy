@@ -6,20 +6,20 @@ schema:
     type: string
     nullable: true
     metadata:
-      description: Transaction date in YYYY-MM-DD format.
+      description: The date when the transaction occurred
       mappings: []
       tags: []
   - name: salesamt
     type: string
     nullable: true
     metadata:
-      description: Total sales amount for the given date.
+      description: Total sales amount for the transaction date
       mappings: []
       tags: []
   - name: ymd
     type: string
     nullable: true
     metadata:
-      description: Date in compact YYYYMMDD format for easy sorting and filtering.
+      description: Date in Year-Month-Day format
       mappings: []
       tags: []

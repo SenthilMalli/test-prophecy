@@ -15,4 +15,5 @@ def src_csv_metric3(spark: SparkSession) -> DataFrame:
         )\
         .option("header", True)\
         .option("sep", ",")\
+        .option("maxColumns", "3")\
         .csv("dbfs:/mnt/landing/prophecy/ops/transsample.csv")
