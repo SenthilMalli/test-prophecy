@@ -3,23 +3,23 @@ schema:
   type: struct
   fields:
   - name: trandate
-    type: date
+    type: string
     nullable: true
     metadata:
-      description: ''
+      description: Transaction date in YYYY-MM-DD format.
       mappings: []
       tags: []
   - name: salesamt
-    type: decimal(10,0)
+    type: string
     nullable: true
     metadata:
-      description: ''
+      description: Total sales amount for the given date.
       mappings: []
       tags: []
   - name: ymd
-    type: decimal(10,0)
+    type: string
     nullable: true
     metadata:
-      description: ''
+      description: Date in compact YYYYMMDD format for easy sorting and filtering.
       mappings: []
       tags: []

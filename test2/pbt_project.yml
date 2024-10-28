@@ -210,6 +210,21 @@ pipelines:
       - datasets/tgt_tbl_insert_metric3
     subgraphs: []
     dependencies: {}
+  pipelines/pl_metrics_ops_v5:
+    name: pl_metrics_ops_v5
+    description: File corrupt
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-28 19:48:21'
+    datasets:
+      inputs:
+      - datasets/src_csv_metric3
+      outputs:
+      - datasets/tgt_tbl_insert_metric3
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -418,19 +433,19 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-10-28T17:48:49.512224Z'
+  modifiedAt: '2024-10-28T19:48:23.515109Z'
   name: plibMaven
   version: 8.0.31
-  id: '150211797'
-  createdAt: '2024-10-28T17:48:49.512193Z'
+  id: '1205415254'
+  createdAt: '2024-10-28T19:48:23.515078Z'
   enabled: true
   entity: Project
 - type: plibPypi
-  modifiedAt: '2024-10-28T18:21:55.952Z'
+  modifiedAt: '2024-10-28T19:50:50.956Z'
   name: ProphecyLibsPython
   version: 1.9.9
-  id: '1910559264'
-  createdAt: '2024-10-28T17:48:49.512248Z'
+  id: '1296789746'
+  createdAt: '2024-10-28T19:48:23.515133Z'
   enabled: true
   entity: Project
   description: Default dependency for Prophecy Libs
