@@ -2,7 +2,7 @@ version: 1
 schema:
   type: struct
   fields:
-  - name: transdate
+  - name: trandate
     type: date
     nullable: true
     metadata:

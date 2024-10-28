@@ -4,9 +4,12 @@ from pyspark.sql.types import *
 from pl_metrics_ops_v4.config.ConfigStore import *
 from pl_metrics_ops_v4.functions import *
 from prophecy.utils import *
+from pl_metrics_ops_v4.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    pass
+    df_src_csv_metric3 = src_csv_metric3(spark)
+    df_sales_projection = sales_projection(spark, df_src_csv_metric3)
+    tgt_tbl_metric3(spark, df_sales_projection)
 
 def main():
     spark = SparkSession.builder\

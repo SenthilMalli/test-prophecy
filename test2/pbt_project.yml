@@ -204,8 +204,10 @@ pipelines:
     language: python
     createdAt: '2024-10-28 17:48:48'
     datasets:
-      inputs: []
-      outputs: []
+      inputs:
+      - datasets/src_csv_metric3
+      outputs:
+      - datasets/tgt_tbl_insert_metric3
     subgraphs: []
     dependencies: {}
 datasets:

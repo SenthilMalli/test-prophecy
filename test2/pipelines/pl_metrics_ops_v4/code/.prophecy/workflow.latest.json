@@ -9,7 +9,8 @@
       "plibVersion" : {
         "mavenVersion" : "8.0.31",
         "pyPiVersion" : "1.9.9"
-      }
+      },
+      "instrumentationEnabled" : true
     },
     "id" : "1",
     "uri" : "pipelines/pl_metrics_ops_v4",
@@ -72,32 +73,202 @@
     "topLevelPackage" : "pl_metrics_ops_v4",
     "configurationVersion" : "v2"
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "OzTvLfjbqckD8sDwDBhmM",
+    "source" : "WWDDcZj8KLlMk8bpde43z$$V5MaTZ_R6ivkCzMc8VDhD",
+    "sourcePort" : "3OppFFyOCfyQ7H39aZqZF$$w1VD6AL2MK5aksM0Isomr",
+    "target" : "tqqFhX-3zABSN56gaF8q8$$bjLE7HVp3quJBsK8Bob64",
+    "targetPort" : "LXkKgyiAPFTGMOG_eFkb0$$FX9cBJp0stU7rfym4WLob"
+  }, {
+    "id" : "Y6ihvb-_oTiqqAyx_0eWm",
+    "source" : "tqqFhX-3zABSN56gaF8q8$$bjLE7HVp3quJBsK8Bob64",
+    "sourcePort" : "lrW-1PHmzfG4_6ErdcAlQ$$5pQBWdq14Th4Ee5hRmNhJ",
+    "target" : "vCB14eGyiWeKemc5BLfqj$$jQTQLXQZY4NoqsDdqUKnU",
+    "targetPort" : "-V9D2wueKpW6bnehGKh3y$$-PqwCF8Sp8xHTtsYF3YUj"
+  } ],
   "processes" : {
-    "bt1umqwl9ttLyRsr7jjtI$$er-rHgaN7CAFC-4TUgOdU" : {
-      "id" : "bt1umqwl9ttLyRsr7jjtI$$er-rHgaN7CAFC-4TUgOdU",
+    "WWDDcZj8KLlMk8bpde43z$$V5MaTZ_R6ivkCzMc8VDhD" : {
+      "id" : "WWDDcZj8KLlMk8bpde43z$$V5MaTZ_R6ivkCzMc8VDhD",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_0",
-        "slug" : "Source_0",
-        "x" : -880,
-        "y" : -380,
+        "label" : "src_csv_metric3",
+        "slug" : "src_csv_metric3",
+        "x" : -1580,
+        "y" : -480,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Loads sales transaction data from a CSV file for further analysis.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "KQI_WZrzu53LVO2BY7Mx2$$8fXB_Y3RcmQD__M2Hmco_",
+          "id" : "3OppFFyOCfyQ7H39aZqZF$$w1VD6AL2MK5aksM0Isomr",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       },
-      "properties" : { }
+      "properties" : {
+        "datasetId" : "datasets/src_csv_metric3"
+      }
+    },
+    "tqqFhX-3zABSN56gaF8q8$$bjLE7HVp3quJBsK8Bob64" : {
+      "id" : "tqqFhX-3zABSN56gaF8q8$$bjLE7HVp3quJBsK8Bob64",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "sales_projection",
+        "slug" : "sales_projection",
+        "x" : -1460,
+        "y" : -480,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Prepares sales data for analysis by standardizing date and sales amount formats.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "LXkKgyiAPFTGMOG_eFkb0$$FX9cBJp0stU7rfym4WLob",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "trandate",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Transaction date in YYYY-MM-DD format.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salesamt",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total sales amount for the given date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ymd",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date in compact YYYYMMDD format for easy sorting and filtering.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "lrW-1PHmzfG4_6ErdcAlQ$$5pQBWdq14Th4Ee5hRmNhJ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "trandate",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(trandate as date)"
+          },
+          "description" : ""
+        }, {
+          "target" : "salesamt",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(salesamt as decimal)"
+          },
+          "description" : ""
+        }, {
+          "target" : "ymd",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(ymd as int)"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "LXkKgyiAPFTGMOG_eFkb0$$FX9cBJp0stU7rfym4WLob##ymd", "LXkKgyiAPFTGMOG_eFkb0$$FX9cBJp0stU7rfym4WLob##trandate", "LXkKgyiAPFTGMOG_eFkb0$$FX9cBJp0stU7rfym4WLob##salesamt" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "vCB14eGyiWeKemc5BLfqj$$jQTQLXQZY4NoqsDdqUKnU" : {
+      "id" : "vCB14eGyiWeKemc5BLfqj$$jQTQLXQZY4NoqsDdqUKnU",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "tgt_tbl_metric3",
+        "slug" : "tgt_tbl_metric3",
+        "x" : -1320,
+        "y" : -480,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Appends new data to the metrics table for ongoing analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-V9D2wueKpW6bnehGKh3y$$-PqwCF8Sp8xHTtsYF3YUj",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "trandate",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salesamt",
+              "type" : "decimal(10,0)",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ymd",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/tgt_tbl_insert_metric3"
+      }
     }
   },
   "ports" : {
@@ -106,22 +277,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.bt1umqwl9ttLyRsr7jjtI$$er-rHgaN7CAFC-4TUgOdU.properties.datasetId",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "dataset id missing",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }
