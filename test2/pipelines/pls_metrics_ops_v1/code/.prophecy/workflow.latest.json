@@ -354,7 +354,7 @@
         "x" : 40,
         "y" : 280,
         "phase" : 0,
-        "cache" : false,
+        "cache" : true,
         "detailedStats" : false,
         "isImported" : false,
         "comment" : "Retrieves data from the 'pq_metrics_test2' table for analysis.",

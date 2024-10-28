@@ -10,7 +10,7 @@ def pipeline(spark: SparkSession) -> None:
     df_src_tbl_pq_metrics_test2 = src_tbl_pq_metrics_test2(spark)
     df_src_tbl_pq_metrics_test2 = collectMetrics(
         spark, 
-        df_src_tbl_pq_metrics_test2, 
+        df_src_tbl_pq_metrics_test2.cache(), 
         "graph", 
         "pgMALTu9cupCVVqPAYSBC$$eik3Ornf3SIH53FZCTbzy", 
         "MyxEePxzeIczNclKh9zAP$$JpcVv0RdN1PAJZvz3sPfR"

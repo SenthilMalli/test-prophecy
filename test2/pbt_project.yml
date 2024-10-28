@@ -165,6 +165,21 @@ pipelines:
       - datasets/tgt_tbl_pq_metric_r1
     subgraphs: []
     dependencies: {}
+  pipelines/pl_metrics_ops_v2:
+    name: pl_metrics_ops_v2
+    description: Merge conflict
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-28 12:19:44'
+    datasets:
+      inputs:
+      - datasets/src_tbl_pq_metrics_test2
+      outputs:
+      - datasets/tgt_tbl_metric3
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -257,6 +272,19 @@ datasets:
         description: ''
         author: senthilmalli.parameswaran@mnscorp.net
         createdAt: '2024-10-24 04:38:53'
+  datasets/tgt_tbl_metric3:
+    name: tgt_tbl_metric3
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-28 12:52:16'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-28 12:52:16'
 templates: {}
 jobs:
   jobs/Job_test_observability:
