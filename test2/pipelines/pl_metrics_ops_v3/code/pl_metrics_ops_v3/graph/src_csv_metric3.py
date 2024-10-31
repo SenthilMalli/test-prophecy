@@ -6,6 +6,7 @@ from prophecy.libs import typed_lit
 from pl_metrics_ops_v3.config.ConfigStore import *
 from pl_metrics_ops_v3.functions import *
 
+@instrument
 def src_csv_metric3(spark: SparkSession) -> DataFrame:
     return spark.read\
         .schema(
@@ -15,4 +16,5 @@ def src_csv_metric3(spark: SparkSession) -> DataFrame:
         )\
         .option("header", True)\
         .option("sep", ",")\
+        .option("maxColumns", "3")\
         .csv("dbfs:/mnt/landing/prophecy/ops/transsample.csv")

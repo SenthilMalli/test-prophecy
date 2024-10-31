@@ -6,6 +6,7 @@ from prophecy.libs import typed_lit
 from pl_metrics_ops_v5.config.ConfigStore import *
 from pl_metrics_ops_v5.functions import *
 
+@instrument
 def src_csv_metric3(spark: SparkSession) -> DataFrame:
     return spark.read\
         .schema(

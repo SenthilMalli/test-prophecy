@@ -6,6 +6,7 @@ from prophecy.libs import typed_lit
 from pl_metrics_ops_v3.config.ConfigStore import *
 from pl_metrics_ops_v3.functions import *
 
+@instrument
 def sales_projection(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         col("trandate").cast(DateType()).alias("transdate"), 

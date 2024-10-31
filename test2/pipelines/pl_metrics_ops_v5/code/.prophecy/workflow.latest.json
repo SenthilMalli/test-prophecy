@@ -7,9 +7,10 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "8.1.4",
-        "pyPiVersion" : "1.9.14"
-      }
+        "mavenVersion" : "8.0.31",
+        "pyPiVersion" : "1.9.9"
+      },
+      "instrumentationEnabled" : true
     },
     "id" : "1",
     "uri" : "pipelines/pl_metrics_ops_v5",
