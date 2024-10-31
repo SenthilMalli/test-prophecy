@@ -1,0 +1,28 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: transdate
+    type: date
+    nullable: true
+    metadata:
+      description: Transaction date; Date when the sales transaction occurred in YYYY-MM-DD
+        format.
+      mappings: []
+      tags: []
+  - name: salesamt
+    type: decimal(10,0)
+    nullable: true
+    metadata:
+      description: Total sales amount for the transaction; Measured in whole currency
+        units.
+      mappings: []
+      tags: []
+  - name: ymd
+    type: integer
+    nullable: true
+    metadata:
+      description: Date in YYYYMMDD format; Represents the transaction date as an
+        integer.
+      mappings: []
+      tags: []

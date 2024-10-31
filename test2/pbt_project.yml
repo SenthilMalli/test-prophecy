@@ -150,6 +150,81 @@ pipelines:
       - datasets/tgt_ds_test
     subgraphs: []
     dependencies: {}
+  pipelines/pls_metrics_ops_v1:
+    name: pls_metrics_ops_v1
+    description: Operations frequent issues observability test
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-22 04:04:27'
+    datasets:
+      inputs:
+      - datasets/src_tbl_pq_metrics_test2
+      outputs:
+      - datasets/tgt_tbl_pq_metric_r1
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_metrics_ops_v2:
+    name: pl_metrics_ops_v2
+    description: Merge conflict
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-28 12:19:44'
+    datasets:
+      inputs:
+      - datasets/src_tbl_pq_metrics_test2
+      outputs:
+      - datasets/tgt_tbl_metric3
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_metrics_ops_v3:
+    name: pl_metrics_ops_v3
+    description: File unavailability
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-28 15:42:35'
+    datasets:
+      inputs:
+      - datasets/src_csv_metric3
+      outputs:
+      - datasets/tgt_tbl_insert_metric3
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_metrics_ops_v4:
+    name: pl_metrics_ops_v4
+    description: SQL Server connection issue
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-28 17:48:48'
+    datasets:
+      inputs:
+      - datasets/src_csv_metric3
+      outputs:
+      - datasets/tgt_tbl_insert_metric3
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_metrics_ops_v5:
+    name: pl_metrics_ops_v5
+    description: File corrupt
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-10-28 19:48:21'
+    datasets:
+      inputs:
+      - datasets/src_csv_metric3
+      outputs:
+      - datasets/tgt_tbl_insert_metric3
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -216,6 +291,71 @@ datasets:
         description: ''
         author: senthilmalli.parameswaran@mnscorp.net
         createdAt: '2024-08-20 12:57:21'
+  datasets/src_tbl_pq_metrics_test2:
+    name: src_tbl_pq_metrics_test2
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-24 04:34:45'
+    mode: batch
+    physicalDatasets:
+      ndev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-24 04:34:45'
+  datasets/tgt_tbl_pq_metric_r1:
+    name: tgt_tbl_pq_metric_r1
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-24 04:38:53'
+    mode: batch
+    physicalDatasets:
+      ndev:
+        fabricId: 3
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-24 04:38:53'
+  datasets/tgt_tbl_metric3:
+    name: tgt_tbl_metric3
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-28 12:52:16'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-28 12:52:16'
+  datasets/src_csv_metric3:
+    name: src_csv_metric3
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-28 16:01:50'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: File
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-28 16:01:50'
+  datasets/tgt_tbl_insert_metric3:
+    name: tgt_tbl_insert_metric3
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-10-28 16:08:17'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-10-28 16:08:17'
 templates: {}
 jobs:
   jobs/Job_test_observability:
@@ -240,6 +380,32 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2024-08-06 08:58:40'
+    author: senthilmalli.parameswaran@mnscorp.net
+    models: []
+    sqlProjects: []
+  jobs/test1:
+    name: test1
+    description: sample
+    fabricUID: 3
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/pls_metrics_ops_v1
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-10-24 05:11:04'
     author: senthilmalli.parameswaran@mnscorp.net
     models: []
     sqlProjects: []
