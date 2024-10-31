@@ -64,7 +64,7 @@
     } ],
     "isImported" : false,
     "interimMode" : "Vanilla",
-    "interimModeEnabled" : false,
+    "interimModeEnabled" : true,
     "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,

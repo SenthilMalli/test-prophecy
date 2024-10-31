@@ -8114,6 +8114,53 @@
       "properties" : {
         "datasetId" : "datasets/tgt_ds"
       }
+    },
+    "fxbrYv62hgKVnkzyh_RWg$$1Y9xgHYwb6GpWUkYXpVfr" : {
+      "id" : "fxbrYv62hgKVnkzyh_RWg$$1Y9xgHYwb6GpWUkYXpVfr",
+      "component" : "SodaDataQualityCheck",
+      "metadata" : {
+        "label" : "SodaDataQualityCheck_1",
+        "slug" : "SodaDataQualityCheck_1",
+        "x" : -1880,
+        "y" : -580,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Xue6cl7Q65u5uKXtwZzKf$$VXRDxrNN36eLAo2OBanZ_",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "HiDpSoeg-B_dnxZjd3IFY$$gxnuwKJCjZvXk6ejpzzIk",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "sodaDatasourceName" : null,
+        "sodaSecretKey" : [ ],
+        "scanDefinitioName" : null,
+        "ymlFilePath" : null,
+        "activeTab" : "soda_details",
+        "sodaHost" : [ ],
+        "checks" : "",
+        "ymlProvider" : "ymlGem",
+        "credsProvider" : "sodaCredentials",
+        "connStringFilePath" : null,
+        "failedChecksFilePath" : "",
+        "sodaAPIKey" : [ ],
+        "connStringUI" : [ ],
+        "datasetAliases" : [ {
+          "id" : "in0",
+          "alias" : "in0",
+          "tempViewName" : "in0"
+        } ]
+      }
     }
   },
   "ports" : {
@@ -8122,5 +8169,86 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  }
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.fxbrYv62hgKVnkzyh_RWg$$1Y9xgHYwb6GpWUkYXpVfr.ports.inputs[0]",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.fxbrYv62hgKVnkzyh_RWg$$1Y9xgHYwb6GpWUkYXpVfr.properties.sodaHost",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "SODA Host cannot be empty [Location]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.fxbrYv62hgKVnkzyh_RWg$$1Y9xgHYwb6GpWUkYXpVfr.properties.sodaAPIKey",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "SODA API Key cannot be empty [Location]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.fxbrYv62hgKVnkzyh_RWg$$1Y9xgHYwb6GpWUkYXpVfr.properties.sodaSecretKey",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "SODA Secret Key cannot be empty [Location]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.fxbrYv62hgKVnkzyh_RWg$$1Y9xgHYwb6GpWUkYXpVfr.properties.checks",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "YML formatted checks can not be empty",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
 }

@@ -10,6 +10,7 @@ def pipeline(spark: SparkSession) -> None:
     df_src_ds = src_ds(spark)
     df_add_created_timestamp = add_created_timestamp(spark, df_src_ds)
     tgt_ds(spark, df_add_created_timestamp)
+    df_SodaDataQualityCheck_1 = SodaDataQualityCheck_1(spark)
 
 def main():
     spark = SparkSession.builder\
