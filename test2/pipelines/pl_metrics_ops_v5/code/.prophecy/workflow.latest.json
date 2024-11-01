@@ -143,7 +143,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "The date when the transaction occurred",
+                "description" : "Transaction date in YYYY-MM-DD format.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -152,7 +152,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Total sales amount for the transaction date",
+                "description" : "Total sales amount for the given date.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -161,7 +161,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Date in Year-Month-Day format",
+                "description" : "Date in compact YYYYMMDD format for easy sorting and filtering.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }

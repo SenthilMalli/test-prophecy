@@ -240,6 +240,21 @@ pipelines:
       - datasets/tgt_tbl_insert_metric3
     subgraphs: []
     dependencies: {}
+  pipelines/pl_metrics_ops_v3_debug_v1:
+    name: pl_metrics_ops_v3_debug_v1
+    description: debugging a pipeline for observability2
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-11-01 12:42:33'
+    datasets:
+      inputs:
+      - datasets/src_csv_metric3
+      outputs:
+      - datasets/tgt_tbl_insert_metric3
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -448,19 +463,19 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-11-01T12:28:17.175322Z'
+  modifiedAt: '2024-11-01T12:42:34.723269Z'
   name: plibMaven
   version: 8.0.31
-  id: '533435133'
-  createdAt: '2024-11-01T12:28:17.175259Z'
+  id: '116759224'
+  createdAt: '2024-11-01T12:42:34.723235Z'
   enabled: true
   entity: Project
 - type: plibPypi
-  modifiedAt: '2024-11-01T12:28:50.342Z'
+  modifiedAt: '2024-11-01T12:42:52.169Z'
   name: ProphecyLibsPython
   version: 1.9.9
-  id: '505342480'
-  createdAt: '2024-11-01T12:28:17.175352Z'
+  id: '2097469351'
+  createdAt: '2024-11-01T12:42:34.723291Z'
   enabled: true
   entity: Project
   description: Default dependency for Prophecy Libs
