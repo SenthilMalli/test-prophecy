@@ -3,8 +3,8 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.utils import *
 from prophecy.libs import typed_lit
-from pl_metrics_ops_v3.config.ConfigStore import *
-from pl_metrics_ops_v3.functions import *
+from pl_metrics_ops_v3_debug.config.ConfigStore import *
+from pl_metrics_ops_v3_debug.functions import *
 
 @instrument
 def sales_projection(spark: SparkSession, in0: DataFrame) -> DataFrame:

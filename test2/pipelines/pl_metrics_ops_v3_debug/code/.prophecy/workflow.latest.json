@@ -7,15 +7,15 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "8.1.4",
-        "pyPiVersion" : "1.9.14"
+        "mavenVersion" : "8.0.31",
+        "pyPiVersion" : "1.9.9"
       },
       "instrumentationEnabled" : true
     },
     "id" : "1",
-    "uri" : "pipelines/pl_metrics_ops_v3",
+    "uri" : "pipelines/pl_metrics_ops_v3_debug",
     "pipelineSettingsInfo" : {
-      "applicationName" : "pl_metrics_ops_v3",
+      "applicationName" : "pl_metrics_ops_v3_debug",
       "hasApplication" : true,
       "isFunctionsPackageDirDefined" : true
     },
@@ -70,31 +70,31 @@
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "pl_metrics_ops_v3",
+    "topLevelPackage" : "pl_metrics_ops_v3_debug",
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "RtefJKFBob84Y60_Zzq--$$duUIbItcWj5T-8iq_xvKO",
-    "source" : "4E8mCEGD7_ESRbMXaZAWp$$521FqleZtuI6YoQjFXmkJ",
-    "sourcePort" : "21bHPGy0a6hRfQK589BgH$$jHgkHkRi4iir9CCf1WKiN",
-    "target" : "5Vc8j5rNCzw7I8T1RQg48$$78-rxZ_zXGEFsxBQgTtmm",
-    "targetPort" : "DhjhBwgtFJ0VtTyAG0z5B$$qqjUiJsmjDupQKMXav-_i"
+    "id" : "A3dgAgXaTWOZOhvXUOtEZ",
+    "source" : "rFPoikStAyB-cnqo6V-bw$$L3A1God9MmdEJ_6RcPB0V",
+    "sourcePort" : "-wH_eSg1Lg-CjTsR6DFul$$7wazRnxEyCHWGvdhhH8gX",
+    "target" : "at65WvcVhVBpm15TRML5X$$bCtJHjtFaqw_TAPBQyFE9",
+    "targetPort" : "9dtLkkxc-1KGgquHHORdx$$pB7iVqaf_hT2msJc_Bsy5"
   }, {
-    "id" : "HlVGWbRHKZvuLKczw9aeA$$-P7r8loxE05azyWY8HFvl",
-    "source" : "5Vc8j5rNCzw7I8T1RQg48$$78-rxZ_zXGEFsxBQgTtmm",
-    "sourcePort" : "5khuTlnl85jco4-cfLsy6$$01KmVfWWjBlf1M8j3nRZK",
-    "target" : "SL14hc8_0njUtHGcrwGl7$$FK9K9F4nY0IBn6wY1c27t",
-    "targetPort" : "VLU6t3r7s8isG5sYoUA2M$$slwLlLCa5PGzyDywtDAuA"
+    "id" : "L_L2dGpokxig8xQwy92ST",
+    "source" : "at65WvcVhVBpm15TRML5X$$bCtJHjtFaqw_TAPBQyFE9",
+    "sourcePort" : "IX96cdfclTlwNdV3lnKvB$$ZGqPRZawzjapO_o8gLCDp",
+    "target" : "ysWNmR9vGxMP9ZTyeix-O$$M5Kz6lUtfauncYIWn_A90",
+    "targetPort" : "89bbB9osQdGrSTk4ufb6n$$w38IoJgXkL_vtmtplgZtP"
   } ],
   "processes" : {
-    "4E8mCEGD7_ESRbMXaZAWp$$521FqleZtuI6YoQjFXmkJ" : {
-      "id" : "4E8mCEGD7_ESRbMXaZAWp$$521FqleZtuI6YoQjFXmkJ",
+    "rFPoikStAyB-cnqo6V-bw$$L3A1God9MmdEJ_6RcPB0V" : {
+      "id" : "rFPoikStAyB-cnqo6V-bw$$L3A1God9MmdEJ_6RcPB0V",
       "component" : "Source",
       "metadata" : {
         "label" : "src_csv_metric3",
         "slug" : "src_csv_metric3",
-        "x" : -880,
-        "y" : -380,
+        "x" : -320,
+        "y" : -200,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -105,7 +105,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "21bHPGy0a6hRfQK589BgH$$jHgkHkRi4iir9CCf1WKiN",
+          "id" : "-wH_eSg1Lg-CjTsR6DFul$$7wazRnxEyCHWGvdhhH8gX",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -116,24 +116,24 @@
         "datasetId" : "datasets/src_csv_metric3"
       }
     },
-    "5Vc8j5rNCzw7I8T1RQg48$$78-rxZ_zXGEFsxBQgTtmm" : {
-      "id" : "5Vc8j5rNCzw7I8T1RQg48$$78-rxZ_zXGEFsxBQgTtmm",
+    "at65WvcVhVBpm15TRML5X$$bCtJHjtFaqw_TAPBQyFE9" : {
+      "id" : "at65WvcVhVBpm15TRML5X$$bCtJHjtFaqw_TAPBQyFE9",
       "component" : "Reformat",
       "metadata" : {
         "label" : "sales_projection",
         "slug" : "sales_projection",
-        "x" : -760,
-        "y" : -380,
+        "x" : 0,
+        "y" : -180,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Prepares sales data for analysis by standardizing date and sales amount formats.",
+        "comment" : "Prepares sales data by standardizing transaction date, sales amount, and date identifier formats.",
         "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "DhjhBwgtFJ0VtTyAG0z5B$$qqjUiJsmjDupQKMXav-_i",
+          "id" : "9dtLkkxc-1KGgquHHORdx$$pB7iVqaf_hT2msJc_Bsy5",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -142,7 +142,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "The date when the transaction occurred",
+                "description" : "Transaction date in YYYY-MM-DD format.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -151,7 +151,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Total sales amount for the transaction date",
+                "description" : "Total sales amount for the given date.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -160,7 +160,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Date in Year-Month-Day format",
+                "description" : "Date in compact YYYYMMDD format for easy sorting and filtering.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -169,7 +169,7 @@
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "5khuTlnl85jco4-cfLsy6$$01KmVfWWjBlf1M8j3nRZK",
+          "id" : "IX96cdfclTlwNdV3lnKvB$$ZGqPRZawzjapO_o8gLCDp",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -202,21 +202,21 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "DhjhBwgtFJ0VtTyAG0z5B$$qqjUiJsmjDupQKMXav-_i##trandate", "DhjhBwgtFJ0VtTyAG0z5B$$qqjUiJsmjDupQKMXav-_i##salesamt", "DhjhBwgtFJ0VtTyAG0z5B$$qqjUiJsmjDupQKMXav-_i##ymd" ]
+        "columnsSelector" : [ "9dtLkkxc-1KGgquHHORdx$$pB7iVqaf_hT2msJc_Bsy5##trandate", "9dtLkkxc-1KGgquHHORdx$$pB7iVqaf_hT2msJc_Bsy5##salesamt", "9dtLkkxc-1KGgquHHORdx$$pB7iVqaf_hT2msJc_Bsy5##ymd" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
-    "SL14hc8_0njUtHGcrwGl7$$FK9K9F4nY0IBn6wY1c27t" : {
-      "id" : "SL14hc8_0njUtHGcrwGl7$$FK9K9F4nY0IBn6wY1c27t",
+    "ysWNmR9vGxMP9ZTyeix-O$$M5Kz6lUtfauncYIWn_A90" : {
+      "id" : "ysWNmR9vGxMP9ZTyeix-O$$M5Kz6lUtfauncYIWn_A90",
       "component" : "Target",
       "metadata" : {
         "label" : "tgt_tbl_metric3",
         "slug" : "tgt_tbl_metric3",
-        "x" : -620,
-        "y" : -380,
+        "x" : 140,
+        "y" : -180,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -226,7 +226,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "VLU6t3r7s8isG5sYoUA2M$$slwLlLCa5PGzyDywtDAuA",
+          "id" : "89bbB9osQdGrSTk4ufb6n$$w38IoJgXkL_vtmtplgZtP",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
