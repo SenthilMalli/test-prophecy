@@ -7,8 +7,8 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "8.1.4",
-        "pyPiVersion" : "1.9.14"
+        "mavenVersion" : "8.0.31",
+        "pyPiVersion" : "1.9.9"
       },
       "instrumentationEnabled" : true
     },
@@ -65,7 +65,7 @@
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
-    "visualCodeInterimMode" : "Disabled",
+    "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
@@ -142,7 +142,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "The date when the transaction occurred",
+                "description" : "Transaction date in YYYY-MM-DD format.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -151,7 +151,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Total sales amount for the transaction date",
+                "description" : "Total sales amount for the given date.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -160,7 +160,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Date in Year-Month-Day format",
+                "description" : "Date in compact YYYYMMDD format for easy sorting and filtering.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
