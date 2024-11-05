@@ -465,7 +465,7 @@ dependencies:
 - type: plibMaven
   modifiedAt: '2024-11-01T12:49:44.419387Z'
   name: plibMaven
-  version: 8.0.31
+  version: 8.1.4
   id: '2133242629'
   createdAt: '2024-11-01T12:49:44.419357Z'
   enabled: true
@@ -473,7 +473,7 @@ dependencies:
 - type: plibPypi
   modifiedAt: '2024-11-01T13:30:02.939Z'
   name: ProphecyLibsPython
-  version: 1.9.9
+  version: 1.9.14
   id: '1908615994'
   createdAt: '2024-11-01T12:49:44.419414Z'
   enabled: true

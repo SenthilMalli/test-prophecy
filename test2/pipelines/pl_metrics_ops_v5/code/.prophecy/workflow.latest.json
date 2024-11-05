@@ -7,8 +7,8 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "8.0.31",
-        "pyPiVersion" : "1.9.9"
+        "mavenVersion" : "8.1.4",
+        "pyPiVersion" : "1.9.14"
       },
       "instrumentationEnabled" : true
     },
@@ -66,7 +66,7 @@
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
-    "visualCodeInterimMode" : "Disabled",
+    "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000

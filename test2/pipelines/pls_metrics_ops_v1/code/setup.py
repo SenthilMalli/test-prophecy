@@ -7,7 +7,7 @@ setup(
     package_data = {'prophecy_config_instances' : ['*.json', '*.py', '*.conf']},
     description = 'workflow',
     install_requires = [
-'prophecy-libs==1.9.9'],
+'prophecy-libs==1.9.14'],
     entry_points = {
 'console_scripts' : [
 'main = pls_metrics_ops_v1.pipeline:main'], },
