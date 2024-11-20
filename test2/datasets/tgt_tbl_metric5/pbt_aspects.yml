@@ -1,0 +1,26 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: col1
+    type: long
+    nullable: true
+    metadata:
+      description: Total sales amount for the given transaction date.
+      mappings: []
+      tags: []
+  - name: col2
+    type: string
+    nullable: true
+    metadata:
+      description: Transaction date; Date when the sales transaction occurred in YYYY-MM-DD
+        format.
+      mappings: []
+      tags: []
+  - name: load_timestamp
+    type: timestamp
+    nullable: false
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

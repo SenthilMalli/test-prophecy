@@ -1,0 +1,215 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.1.4",
+        "pyPiVersion" : "1.9.14"
+      },
+      "instrumentationEnabled" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/pl_metrics_ops_v6",
+    "sourceSuggestions" : [ ],
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pl_metrics_ops_v6",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "13",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "testsst.projtestmetrics.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.warehouse.functions", "prophecy.spark_basic.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "52",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "51",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Full",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pl_metrics_ops_v6",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "nBEJXFjALPP_2wuyq3ujd$$L-c-FgWfa7Fy-PsYsNP1Z",
+    "source" : "jNZcBOPW7cyuZevbWHuR8$$iBW_KHG9KgDzm9W-0XVuw",
+    "sourcePort" : "izvCrfLMP7yS2xlViCnn0$$BZwu0_4M3nLpz-Si4zS8u",
+    "target" : "B4gqFq3ASzv8nyZqFrgkC$$s2WRyGhjGSjp9CtP_LGvy",
+    "targetPort" : "TIiAPF9g6h5vbBNDUkC38$$kZhsfTwYUWK-3J_ZgCuTJ"
+  } ],
+  "processes" : {
+    "jNZcBOPW7cyuZevbWHuR8$$iBW_KHG9KgDzm9W-0XVuw" : {
+      "id" : "jNZcBOPW7cyuZevbWHuR8$$iBW_KHG9KgDzm9W-0XVuw",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_tbl_metric5",
+        "slug" : "src_tbl_metric5",
+        "x" : -1120,
+        "y" : -400,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Generates synthetic customer data for testing purposes, including unique identifiers, email addresses, and timestamps.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "izvCrfLMP7yS2xlViCnn0$$BZwu0_4M3nLpz-Si4zS8u",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_tbl_metric5"
+      }
+    },
+    "B4gqFq3ASzv8nyZqFrgkC$$s2WRyGhjGSjp9CtP_LGvy" : {
+      "id" : "B4gqFq3ASzv8nyZqFrgkC$$s2WRyGhjGSjp9CtP_LGvy",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "select_columns",
+        "slug" : "select_columns",
+        "x" : -820,
+        "y" : -400,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Standardizes data by selecting and converting specific columns.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TIiAPF9g6h5vbBNDUkC38$$kZhsfTwYUWK-3J_ZgCuTJ",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "col1",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "String value representing a specific attribute",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date and time when the data was loaded",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "mXdGs-D6CpQCSyAqsfIwD$$R7BDskUsiBwXlmLWpBPbP",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "col1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "cast(col1 as bigint)"
+          },
+          "description" : ""
+        }, {
+          "target" : "col2",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "col2"
+          },
+          "description" : ""
+        }, {
+          "target" : "load_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "load_timestamp"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "TIiAPF9g6h5vbBNDUkC38$$kZhsfTwYUWK-3J_ZgCuTJ##col1", "TIiAPF9g6h5vbBNDUkC38$$kZhsfTwYUWK-3J_ZgCuTJ##load_timestamp", "TIiAPF9g6h5vbBNDUkC38$$kZhsfTwYUWK-3J_ZgCuTJ##col2" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

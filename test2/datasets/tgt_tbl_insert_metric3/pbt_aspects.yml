@@ -17,7 +17,7 @@ schema:
       mappings: []
       tags: []
   - name: ymd
-    type: decimal(10,0)
+    type: integer
     nullable: true
     metadata:
       description: ''

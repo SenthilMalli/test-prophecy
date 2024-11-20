@@ -1,0 +1,276 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.1.4",
+        "pyPiVersion" : "1.9.14"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/ingesttest_01",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "ingesttest_01",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "13",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "testsst.projtestmetrics.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.warehouse.functions", "prophecy.spark_basic.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "52",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "51",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "ingesttest_01",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "gVEO7MMLnIfM9qjmsZ1vJ$$F9XSkz5n1euVrTtfgF3xb",
+    "source" : "SENSM2-jNZPKDdEYv4vU3$$OZfgK-IcjXfekkkA_l_mA",
+    "sourcePort" : "FiUeqBMdMl6SU9coiMJRq$$sekfPdd_6u4kKYA3TXe7L",
+    "target" : "1JSTIhgddMmhh7Geb3meA$$XDkb-8kJwAkmE4SIFccc6",
+    "targetPort" : "W-WLeyswJYMPTYomJuogv$$9GwZWek-5V1iy7VJbNX5h"
+  }, {
+    "id" : "4WqlcT5TXJ2PLVk6EtlzQ$$XNCWWuqJvB7ixNk7h-ZM-",
+    "source" : "1JSTIhgddMmhh7Geb3meA$$XDkb-8kJwAkmE4SIFccc6",
+    "sourcePort" : "QExiRcCkkcXWSAH3QthJJ$$KQuhOL4zqsMaXhdG2yJfy",
+    "target" : "yN3WBn_ePc1CDvMDVwJBi$$DX-gW13q6dCwparg7OFEI",
+    "targetPort" : "GBA7FfBMWWDNFC4edB1Uy$$2MwmcpVMSgGvILn3GiKqR"
+  } ],
+  "processes" : {
+    "SENSM2-jNZPKDdEYv4vU3$$OZfgK-IcjXfekkkA_l_mA" : {
+      "id" : "SENSM2-jNZPKDdEYv4vU3$$OZfgK-IcjXfekkkA_l_mA",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_csv_malformed",
+        "slug" : "src_csv_malformed",
+        "x" : -800,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Loads and processes CSV files with potential data issues, ensuring malformed records are captured for review.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "FiUeqBMdMl6SU9coiMJRq$$sekfPdd_6u4kKYA3TXe7L",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_csv_malformed"
+      }
+    },
+    "1JSTIhgddMmhh7Geb3meA$$XDkb-8kJwAkmE4SIFccc6" : {
+      "id" : "1JSTIhgddMmhh7Geb3meA$$XDkb-8kJwAkmE4SIFccc6",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "OrderBy_1",
+        "slug" : "OrderBy_1",
+        "x" : -380,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W-WLeyswJYMPTYomJuogv$$9GwZWek-5V1iy7VJbNX5h",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "Name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The full name of the individual",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : " Age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The age of the individual",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : " Salary",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The income earned by the individual",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "malformed",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "QExiRcCkkcXWSAH3QthJJ$$KQuhOL4zqsMaXhdG2yJfy",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "orders" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/OrderBy",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "yN3WBn_ePc1CDvMDVwJBi$$DX-gW13q6dCwparg7OFEI" : {
+      "id" : "yN3WBn_ePc1CDvMDVwJBi$$DX-gW13q6dCwparg7OFEI",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Target_1",
+        "slug" : "Target_1",
+        "x" : -200,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GBA7FfBMWWDNFC4edB1Uy$$2MwmcpVMSgGvILn3GiKqR",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.1JSTIhgddMmhh7Geb3meA$$XDkb-8kJwAkmE4SIFccc6.properties.orders",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "At least one order rule has to be specified",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.yN3WBn_ePc1CDvMDVwJBi$$DX-gW13q6dCwparg7OFEI",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.yN3WBn_ePc1CDvMDVwJBi$$DX-gW13q6dCwparg7OFEI.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
+}

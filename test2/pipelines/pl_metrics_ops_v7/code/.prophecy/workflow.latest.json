@@ -1,0 +1,279 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.1.4",
+        "pyPiVersion" : "1.9.14"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/pl_metrics_ops_v7",
+    "sourceSuggestions" : [ ],
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pl_metrics_ops_v7",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "13",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "testsst.projtestmetrics.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.warehouse.functions", "prophecy.spark_basic.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "52",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "51",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pl_metrics_ops_v7",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "_B4RTQF6jNDKdGKRubVUe$$v2ibwUa0CeSnFArYF2Ox3",
+    "source" : "eB14yYCXCZuDXgBLvOhPZ$$aRQRBp87f_Ahl-K_3IoSC",
+    "sourcePort" : "_lfgRDP7DNRZcgHGdSghX$$tmrW3zf2hCeJudpHt5Rtd",
+    "target" : "x1WrhW_DFDYS077GqJjLX$$uaGXyDjEDxLmGINO_DNot",
+    "targetPort" : "5e4v9w3AmrKi9mcE1VzTF$$ot0vZ_FsAFryfjg1EIqLo"
+  }, {
+    "id" : "PjRHmOIU4ZWE0a-xbz8Wg$$m9gEF-grZtuIhFIT-UqZF",
+    "source" : "x1WrhW_DFDYS077GqJjLX$$uaGXyDjEDxLmGINO_DNot",
+    "sourcePort" : "uQh1W6wSsgi0lWcpqupVL$$BZ2V3eSF6ZB8rM9KWRIfd",
+    "target" : "evA2Wq0KJQw0vyL4O43cz$$0jU41gNVs1GXqmKseLVqN",
+    "targetPort" : "Pe5NtHYsmfy1k02cluHIs$$2FzQWkCpisJlNOhLcMLoM"
+  } ],
+  "processes" : {
+    "eB14yYCXCZuDXgBLvOhPZ$$aRQRBp87f_Ahl-K_3IoSC" : {
+      "id" : "eB14yYCXCZuDXgBLvOhPZ$$aRQRBp87f_Ahl-K_3IoSC",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src_csv_metric5",
+        "slug" : "src_csv_metric5",
+        "x" : -880,
+        "y" : -380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "_lfgRDP7DNRZcgHGdSghX$$tmrW3zf2hCeJudpHt5Rtd",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src_csv_metric5"
+      }
+    },
+    "x1WrhW_DFDYS077GqJjLX$$uaGXyDjEDxLmGINO_DNot" : {
+      "id" : "x1WrhW_DFDYS077GqJjLX$$uaGXyDjEDxLmGINO_DNot",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "sales_projection",
+        "slug" : "sales_projection",
+        "x" : -680,
+        "y" : -360,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Prepares sales data by renaming columns and adding a timestamp for when the data was processed.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5e4v9w3AmrKi9mcE1VzTF$$ot0vZ_FsAFryfjg1EIqLo",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "trandate",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Transaction date; Date when the sales transaction occurred in YYYY-MM-DD format.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "salesamt",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total sales amount for the given transaction date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ymd",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date in YYYYMMDD format representing the transaction date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "uQh1W6wSsgi0lWcpqupVL$$BZ2V3eSF6ZB8rM9KWRIfd",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "col1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "salesamt"
+          },
+          "description" : ""
+        }, {
+          "target" : "col2",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "trandate"
+          },
+          "description" : ""
+        }, {
+          "target" : "load_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "now()"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "5e4v9w3AmrKi9mcE1VzTF$$ot0vZ_FsAFryfjg1EIqLo##trandate", "5e4v9w3AmrKi9mcE1VzTF$$ot0vZ_FsAFryfjg1EIqLo##salesamt" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/5qX7Px4b_team_37/5qX7Px4b_project_51.git&subPath=&tag=0.2.28&projectSubscriptionProjectId=51&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "evA2Wq0KJQw0vyL4O43cz$$0jU41gNVs1GXqmKseLVqN" : {
+      "id" : "evA2Wq0KJQw0vyL4O43cz$$0jU41gNVs1GXqmKseLVqN",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "tgt_tbl_metric5",
+        "slug" : "tgt_tbl_metric5",
+        "x" : -500,
+        "y" : -360,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Saves data into a table for further analysis and reporting.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Pe5NtHYsmfy1k02cluHIs$$2FzQWkCpisJlNOhLcMLoM",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "col1",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total sales amount for the given transaction date.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "col2",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Transaction date; Date when the sales transaction occurred in YYYY-MM-DD format.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "load_timestamp",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/tgt_tbl_metric5"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

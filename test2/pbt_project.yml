@@ -255,6 +255,49 @@ pipelines:
       - datasets/tgt_tbl_insert_metric3
     subgraphs: []
     dependencies: {}
+  pipelines/ingesttest_01:
+    name: ingesttest_01
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-11-15 12:48:19'
+    datasets:
+      inputs:
+      - datasets/src_csv_malformed
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_metrics_ops_v6:
+    name: pl_syntheticdata_test
+    description: Type cast error of string to  bigint
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-11-20 16:59:37'
+    datasets:
+      inputs:
+      - datasets/src_tbl_metric5
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+  pipelines/pl_metrics_ops_v7:
+    name: pl_metrics_ops_v7
+    description: bigint to string
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-11-20 17:56:18'
+    datasets:
+      inputs:
+      - datasets/src_csv_metric5
+      outputs:
+      - datasets/tgt_tbl_metric5
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -386,6 +429,58 @@ datasets:
         description: ''
         author: senthilmalli.parameswaran@mnscorp.net
         createdAt: '2024-10-28 16:08:17'
+  datasets/src_csv_malformed:
+    name: src_csv_malformed
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-11-15 13:29:18'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: File
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-11-15 13:29:18'
+  datasets/src_tbl_metric5:
+    name: src_tbl_metric5
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-11-20 17:13:37'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-11-20 17:13:37'
+  datasets/tgt_tbl_metric5:
+    name: tgt_tbl_metric5
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-11-20 17:14:31'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-11-20 17:14:31'
+  datasets/src_csv_metric5:
+    name: src_csv_metric5
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-11-20 17:59:31'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: File
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-11-20 17:59:31'
 templates: {}
 jobs:
   jobs/Job_test_observability:
@@ -463,24 +558,17 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-11-01T12:49:44.419387Z'
+  modifiedAt: '2024-11-20T17:56:20.103513Z'
   name: plibMaven
   version: 8.1.4
-  id: '2133242629'
-  createdAt: '2024-11-01T12:49:44.419357Z'
-  enabled: true
-  entity: Project
+  id: '1164402740'
+  createdAt: '2024-11-20T17:56:20.103481Z'
 - type: plibPypi
-  modifiedAt: '2024-11-01T13:30:02.939Z'
-  name: ProphecyLibsPython
+  modifiedAt: '2024-11-20T17:56:20.103561Z'
+  name: plibPypi
   version: 1.9.14
-  id: '1908615994'
-  createdAt: '2024-11-01T12:49:44.419414Z'
-  enabled: true
-  entity: Project
-  description: Default dependency for Prophecy Libs
-  scope: Project
-  editable: true
+  id: '877412513'
+  createdAt: '2024-11-20T17:56:20.103553Z'
 projectDependencies:
   '52':
     projectUID: 52

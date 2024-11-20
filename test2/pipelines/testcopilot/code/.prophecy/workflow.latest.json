@@ -7,8 +7,8 @@
     "codeGenConfiguration" : {
       "editableConfig" : true,
       "plibVersion" : {
-        "mavenVersion" : "8.0.31",
-        "pyPiVersion" : "1.9.9"
+        "mavenVersion" : "8.1.4",
+        "pyPiVersion" : "1.9.14"
       }
     },
     "id" : "1",
@@ -130,7 +130,7 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes.FW2cT0jEeg_BnKtndnBgf$$nqEv0pW54AVXmkv0g35WD.ports.inputs[0]",
+    "property" : "$.workflow.processes.FW2cT0jEeg_BnKtndnBgf$$nqEv0pW54AVXmkv0g35WD",
     "range" : {
       "start" : {
         "line" : 0,
@@ -142,71 +142,7 @@
       }
     },
     "severity" : 1,
-    "message" : "Please connect input port in0",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.FW2cT0jEeg_BnKtndnBgf$$nqEv0pW54AVXmkv0g35WD.properties.sodaHost",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "SODA Host cannot be empty [Location]",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.FW2cT0jEeg_BnKtndnBgf$$nqEv0pW54AVXmkv0g35WD.properties.sodaAPIKey",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "SODA API Key cannot be empty [Location]",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.FW2cT0jEeg_BnKtndnBgf$$nqEv0pW54AVXmkv0g35WD.properties.sodaSecretKey",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "SODA Secret Key cannot be empty [Location]",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.FW2cT0jEeg_BnKtndnBgf$$nqEv0pW54AVXmkv0g35WD.properties.checks",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "YML formatted checks can not be empty",
+    "message" : "Could not find the spec for SodaDataQualityCheck",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]

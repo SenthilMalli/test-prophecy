@@ -1,0 +1,32 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: Name
+    type: string
+    nullable: true
+    metadata:
+      description: The full name of the individual
+      mappings: []
+      tags: []
+  - name: ' Age'
+    type: string
+    nullable: true
+    metadata:
+      description: The age of the individual
+      mappings: []
+      tags: []
+  - name: ' Salary'
+    type: string
+    nullable: true
+    metadata:
+      description: The income earned by the individual
+      mappings: []
+      tags: []
+  - name: malformed
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

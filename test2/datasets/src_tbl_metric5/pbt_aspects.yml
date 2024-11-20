@@ -1,0 +1,25 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: col1
+    type: long
+    nullable: true
+    metadata:
+      description: Unique identifier for the record
+      mappings: []
+      tags: []
+  - name: col2
+    type: string
+    nullable: true
+    metadata:
+      description: String value representing a specific attribute
+      mappings: []
+      tags: []
+  - name: load_timestamp
+    type: timestamp
+    nullable: true
+    metadata:
+      description: The date and time when the data was loaded
+      mappings: []
+      tags: []
