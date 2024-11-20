@@ -298,6 +298,21 @@ pipelines:
       - datasets/tgt_tbl_metric5
     subgraphs: []
     dependencies: {}
+  pipelines/pl_metrics_ops_v8:
+    name: pl_metrics_ops_v8
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-11-20 18:07:55'
+    datasets:
+      inputs:
+      - datasets/src_tbl_metric7
+      outputs:
+      - datasets/tgt_tbl_metric5
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/src_ds:
     name: src_ds
@@ -481,6 +496,32 @@ datasets:
         description: ''
         author: senthilmalli.parameswaran@mnscorp.net
         createdAt: '2024-11-20 17:59:31'
+  datasets/src_tbl_metric7:
+    name: src_tbl_metric7
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-11-20 18:12:28'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-11-20 18:12:28'
+  datasets/testtgr:
+    name: testtgr
+    description: ''
+    author: senthilmalli.parameswaran@mnscorp.net
+    createdAt: '2024-11-20 18:14:53'
+    mode: batch
+    physicalDatasets:
+      fbr_dbr_ndev:
+        fabricId: 13
+        datasetType: Database
+        description: ''
+        author: senthilmalli.parameswaran@mnscorp.net
+        createdAt: '2024-11-20 18:14:53'
 templates: {}
 jobs:
   jobs/Job_test_observability:
@@ -558,17 +599,17 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-11-20T17:56:20.103513Z'
+  modifiedAt: '2024-11-20T18:07:56.722075Z'
   name: plibMaven
   version: 8.1.4
-  id: '1164402740'
-  createdAt: '2024-11-20T17:56:20.103481Z'
+  id: '221276476'
+  createdAt: '2024-11-20T18:07:56.722045Z'
 - type: plibPypi
-  modifiedAt: '2024-11-20T17:56:20.103561Z'
+  modifiedAt: '2024-11-20T18:07:56.722106Z'
   name: plibPypi
   version: 1.9.14
-  id: '877412513'
-  createdAt: '2024-11-20T17:56:20.103553Z'
+  id: '686505692'
+  createdAt: '2024-11-20T18:07:56.722098Z'
 projectDependencies:
   '52':
     projectUID: 52

@@ -1,0 +1,25 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: col1
+    type: string
+    nullable: true
+    metadata:
+      description: First column of the dataset
+      mappings: []
+      tags: []
+  - name: col2
+    type: string
+    nullable: true
+    metadata:
+      description: Second column of the dataset
+      mappings: []
+      tags: []
+  - name: load_timestamp
+    type: timestamp
+    nullable: true
+    metadata:
+      description: Timestamp when the data was loaded
+      mappings: []
+      tags: []
